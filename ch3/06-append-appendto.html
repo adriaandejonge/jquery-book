@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Difference between append() and appendTo()</title>
+</head>
+<body>
+
+<div id="append-placeholder">
+</div>
+
+<button id="append">append()</button><br>
+
+<div id="append-to-placeholder">
+</div>
+
+<button id="append-to">appendTo()</button><br>
+
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('#append').click(function() {
+    $('#append-placeholder').append('<p>Test append</p>');
+  });
+
+  $('#append-to').click(function() {
+    $('<p>Test appendTo()</p>').appendTo('#append-to-placeholder');
+  });
+
+more.lengthmore.length});
+</script>
+</body>
+</html>

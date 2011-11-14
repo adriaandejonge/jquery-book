@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>A function as argument for append()</title>
+  <style>
+  /* please externalize this code to an external
+     .css file */
+  div#template {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+
+<div id="append-placeholder">
+  <p>Test!</p>
+</div>
+
+<button id="append">Add more...</button><br>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('#append').click(function() {
+    $('#append-placeholder').append(function(index, html) {
+      var more = "<p>There is room for more</p>",
+        last = "<p>This is the last one</p>",
+        spaceLeft = 160 - $.trim(html).length - last.length;
+    
+      if(more.length < spaceLeft)
+        return more;
+      else if(spaceLeft > 0)
+        return last;
+    });
+  });
+
+});
+</script>
+</body>
+</html>

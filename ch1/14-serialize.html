@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The serialize() and serializeArray() function</title>
+</head>
+<body>
+
+
+<h2>Press the buttons to see the result of two
+  different serialization functions</h2>
+
+<form action="" method="post">
+  <label for="first_field">First field</label>
+  <input type="text" name="first_field" 
+    value="" id="first_field"><br>
+  <label for="second_field">Second field</label>
+  <input type="text" name="second_field" 
+    value="" id="second_field"><br>
+  <label for="third_field">Third field</label>
+  <input type="text" name="third_field" 
+    value="" id="third_field"><br>
+  <label for="fourth_field">Fourth field</label>
+  <input type="text" name="fourth_field" 
+    value="" id="fourth_field"><br>    
+</form>
+
+<input type="button" name="serialize" 
+  value="Serialize" id="serialize">
+<input type="button" name="serialize-array" 
+  value="SerializeArray" id="serialize-array">
+
+<div id="placeholder" />
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('#serialize').click(function() {
+    $('#placeholder').html($('form').serialize());
+  });
+
+  $('#serialize-array').click(function() {
+    $('#placeholder').html(JSON.stringify(
+      $('form').serializeArray()));
+  });
+
+});
+</script>
+</body>
+</html>

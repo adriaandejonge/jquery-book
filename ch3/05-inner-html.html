@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The html() function</title>
+</head>
+<body>
+  
+<h2>Press the button to see the old HTML in the 
+  paragraph and replace it with new HTML</h2>
+  
+<p>This <strong>contains</strong> some 
+  <a href="http://www.w3.org/TR/html5/">HTML</a> 
+  of its <em>own</em>.</p>
+
+<button>Change</button>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('button').click(function() {
+
+    var p = $('p');
+
+    alert('The old HTML was:\n' + p.html());
+
+    p.html('<p>And that can be replaced with ' + 
+           '<em>simple</em> new HTML.</p>');
+
+  });
+  
+});
+</script>
+</body>
+</html>

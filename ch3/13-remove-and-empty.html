@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The remove() and empty() function</title>
+  <style>
+  /* please externalize this code to an external
+     .css file */
+  p {
+    border: 1px solid red;
+  }
+  </style>
+</head>
+<body>
+
+<h1>Click on the paragraph to remove</h1>
+<p id="remove">This text will have a different appearance after the clicking</p>
+
+<h1>Click on the paragraph to remove the spans</h1>
+<p id="remove-spans">This text <span id="test">will</span> 
+  have <span>a</span> different appearance after 
+  <span>the</span> clicking</p>
+
+<h1>Click on the paragraph to empty</h1>
+<p id="empty">This text will have a different appearance
+   after the clicking</p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('p#remove').click(function() {
+    $(this).remove();
+  });
+
+  $('p#remove-spans').click(function() {
+    $(this).children('span').remove();
+  
+    // Does not work:
+    //$(this).remove('span');
+  
+    // Removes the element itself:
+    //$(this).remove(':has(span)');
+  });
+
+  $('p#empty').click(function() {
+    $(this).empty();
+  });
+  
+});
+</script>
+</body>
+</html>

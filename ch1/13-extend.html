@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The extend() function</title>
+</head>
+<body>
+  
+<p>First object:</p>
+
+<p id="object-1"></p>
+
+<p>Second object:</p>
+
+<p id="object-2"></p>
+
+<p>Result object:</p>
+
+<p id="object-result"></p>
+
+<button id="extend">Extend</button>
+
+<button id="extend-new">Extend into empty</button>
+
+<button id="reset">Reset</button>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  var reset,
+        object1 = object2 = objectresult = {};
+
+  var show = function() {
+    $('#object-1').html(JSON.stringify(object1));
+    $('#object-2').html(JSON.stringify(object2));
+    $('#object-result').html(JSON.stringify(objectresult));
+  };
+  
+  (reset = function() {
+    object1 = {
+      a: 'original a',
+      b: 'original b',
+      c: 'original c'
+    };
+    object2 = {
+      c: 'different c',
+      d: 'different d'
+    };
+    objectresult = {};  
+    show();
+  })();
+  
+  $('#extend').click(function() {
+    // has side effects for object1
+    objectresult = $.extend(object1, object2);
+    show();
+  });
+  
+  $('#extend-new').click(function() {
+    // without side effects for object1
+    objectresult = $.extend({}, object1, object2);
+    show();
+  });
+  
+  $('#reset').click(function() {
+    reset();
+  });
+  
+});
+</script>
+</body>
+</html>

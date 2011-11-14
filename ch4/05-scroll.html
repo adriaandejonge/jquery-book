@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Listening to scroll events</title>
+</head>
+<body>
+
+<h2>Scroll the page to see scroll events</h2>
+
+<div id="placeholder" /> 
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  // make a long page so you can scroll without wasting
+  // too many pages in the book
+  var array = [];
+  for(var i = 0; i < 100; i++) {
+    array.push('<p>Element ' + i + '</p>');
+  }  
+  $('#placeholder').html(array.join(''));
+  
+  $(this).scroll(function(event) {
+    var scrollTop = $(window).scrollTop();
+    $('p').html('scrollTop: ' + scrollTop);
+  });
+
+});
+</script>
+</body>
+</html>

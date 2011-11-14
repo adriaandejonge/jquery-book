@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Custom selector</title>
+</head>
+<body>
+  
+<h2>Every third line gets a blue background color</h2>
+
+<ul>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
+  <li>Six</li>
+  <li>Seven</li>
+  <li>Eight</li>
+  <li>Nine</li>
+  <li>Ten</li>
+</ul>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $.expr[':'].third = function(obj, index, meta, stack) {
+
+    // obj contains the current element
+
+    // index contains the 0 - n, depending on the current 
+    //      element and the number of elements
+
+    // meta contains an array with the following values:
+    //      [":third('bla')", "third", "'", "bla"]
+
+    // stack contains a NodeList, which can be transformed into
+    //       an array using $.makeArray(stack)
+
+    return (index + 1) % 3 == 0;
+  };
+  
+  $('li:third(\'bla\')').css('background-color', 'blue');
+  
+  // li:nth-child(3n) would do the same of course
+  // this example is to show how to implement a custom
+  // selector
+
+});
+
+</script>
+</body>
+</html>

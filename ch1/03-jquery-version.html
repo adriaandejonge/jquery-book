@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>jQuery Version</title>
+</head>
+<body>
+  
+<p>The jQuery version is: <span id="placeholder"/></p>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  var a = {b: 1, c: 2};
+  var b = $('#placeholder');
+  var jqVersion = $.fn.jquery;
+
+  if(a.jquery) {
+    a.html(jqVersion + (' (a)'));
+  }
+
+  if(b.jquery) {
+    b.html(jqVersion + (' (b)'));
+  }
+  
+});
+</script>
+</body>
+</html>

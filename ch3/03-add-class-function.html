@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>A function as argument to addClass()</title>
+  <style>
+  /* please externalize this code to an external
+     .css file */
+     
+  p.changed-0 {
+   background-color: green;
+  }
+  
+  p.differentchanged-1 {
+    background-color: blue;
+  }
+  
+  p.twochanged-2 {
+    background-color: red;
+  }
+  
+  </style>
+</head>
+<body>
+
+<p>This text will have a different appearance 
+  after the class change</p>
+<p class="different">This text will have a different 
+  appearance after the class change</p>
+<p class="one two">This text will have a different 
+  appearance after the class change</p>
+<div>This text will not change</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('p').addClass(function(index, className) {
+      $(this).removeClass();
+      return className + 'changed-' + index;
+    });
+  
+});
+</script>
+</body>
+</html>

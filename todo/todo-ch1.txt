@@ -1,0 +1,12 @@
+CDN or not
+
+$ shortcut explained
+
+
+
+
+map reduce etc helper functions
+
+
+
+nu buiten scope: contains()

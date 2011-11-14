@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The has() and is() function.</title>  
+</head>
+<body>
+
+<div>This text should be <span>normal</span>.</div>
+
+<div>This text should have a <em>background</em> in red</div>
+
+<div>This text should be <strong id="select">normal</strong>.</div>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('div').has('em').css('background-color', 'red');
+  
+  var strongEl = $('strong');
+  strongEl.append(', and .is() = ' + strongEl.is('#select'));
+});
+</script>
+</body>
+</html>

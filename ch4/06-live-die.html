@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The live() and die() functions for 
+    adding event listeners</title>
+</head>
+<body>
+  
+<h2>First click on Live, then click on li items 
+  to generate events.</h2>
+
+<ul id="main-list">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+
+<button id="live">Live</button>
+<button id="die">Die</button>
+<button id="add">Add a li item</button>
+
+<p id="placeholder" />
+
+<h2>And a seemingly unrelated list, you can also click on</h2>
+<ul>
+  <li>Other element</li>
+  <li>And yet another</li>
+</ul>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('#live').click(function() {
+    $('li').live('click', function() {
+      $('#placeholder').append(
+        'Clicked ' + $(this).html() + '<br/>');
+    });
+  });
+  
+  $('#die').click(function() {
+    $('li').die('click');
+  });
+  
+  $('#add').click(function() {
+    $('#main-list').append($('<li>Another</li>'));
+  });
+
+});
+</script>
+</body>
+</html>

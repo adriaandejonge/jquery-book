@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Using data() for HTML5 data- attributes</title>
+</head>
+<body>
+  
+<p data-myattribute="just some random content" 
+id="test-data">If you press the button, you can reveal 
+the text hidden as an attribute in side the paragraph 
+element as an HTML5 data attribute.</p>
+
+<button>Get data attribute</button>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('button').click(function() {
+    alert('The data is: ' + $('#test-data').data('myattribute'));   
+  });
+  
+});
+</script>
+</body>
+</html>

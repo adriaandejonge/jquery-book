@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Change the this object of a function</title>
+</head>
+<body>
+
+<p>This text would change if a proxy is used pointing 
+   to this paragraph</p>
+
+
+<button id="regular">Regular button - changes 
+  itself when pressed</button><br>
+
+<button id="proxy">Proxy button - changes
+  the paragraph when pressed</button>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+
+$(document).ready(function() {
+
+  var handler = function() {
+    $(this).html('Changed');
+  }
+
+  $('#regular').click(handler);
+  
+  $('#proxy').click($.proxy(handler, $('p')))
+
+});
+</script>
+</body>
+</html>

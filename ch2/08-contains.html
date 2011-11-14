@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The contains() selector</title>  
+</head>
+<body>
+
+<div>This text should be normal.</div>
+
+<div>This text should be colored in blue</div>
+
+<div>This text should NOT be colored</div>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('div:contains("blue")').css('background-color', 'blue');
+
+});
+</script>
+</body>
+</html>

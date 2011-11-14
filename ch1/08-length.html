@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The length() function</title>
+</head>
+<body>
+
+<h2>By clicking on the button below, you can see
+  the length of the selected element set.</p>
+
+<p>First</p>
+<p>Second</p>
+<p>Third</p>
+
+<button id="get-length">Get length</button>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  // same as next
+  $('#get-length').click(function() {
+    alert('Length = ' + $('p').length);
+  });
+  
+});
+</script>
+</body>
+</html>

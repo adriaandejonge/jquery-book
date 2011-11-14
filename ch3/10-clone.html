@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The clone() function</title>
+  <style>
+  /* please externalize this code to an external
+     .css file */
+  div#template {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+
+<h2>Add rows under the repeating fields header using the 
+  button below</h2>
+
+<form action="" method="post">
+  
+  <h2>Single fields</h2>
+  
+  <label for="first">First</label>
+  <input type="text" name="first"><br>
+  
+  <label for="second">Second</label>
+  <input type="text" name="second"><br>
+  
+  <h2>Repeating fields</h2>
+  
+  <button id="add-row">Add row</button><br>
+
+  <div id="repeat"></div>
+
+</form>
+
+<div id="template">
+  <label for="third">Third</label>
+  <input type="text" name="third" ></br>
+  
+  <label for="fourth">Fourth</label>
+  <input type="checkbox" name="fourth"></br>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  var rowCount = 0;
+  
+  $('#add-row').click(function() {
+    $('#template *')
+      .clone()
+      .filter('input')
+        .attr('name', function(index, name) {
+          return name +'[' + rowCount + ']';
+        })
+        .end()
+      .appendTo('#repeat');
+    rowCount++;
+    
+    // if the click handler is on a <button> element and the button 
+    // is within a <form> element, return false to stop the page 
+    // from reloading and inadvertently undoing the clone action
+    return false;
+  });
+  
+});
+</script>
+</body>
+</html>

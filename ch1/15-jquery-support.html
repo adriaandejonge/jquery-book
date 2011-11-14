@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The support property</title>
+</head>
+<body>
+  
+<p>The paragraph under this contains the supported 
+  properties of this browser:</p>
+
+<p id="placeholder"></p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+var result = [];
+ $.each(
+ ('ajax boxModel changeBubbles checkClone checkOn cors cssFloat ' +
+ 'hrefNormalized htmlSerialize leadingWhitespace noCloneChecked ' +
+ 'noCloneEvent opacity optDisabled optSelected style ' +
+ 'submitBubbles tbody').split(' '), function(index, name) {
+  result.push(name + ' = ' + $.support[name] + '<br/>');
+});
+
+  $('#placeholder').html(result.join('') );
+  
+});
+</script>
+</body>
+</html>

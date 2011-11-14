@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Combine two element sets</title> 
+</head>
+<body>
+
+<div>This text should be normal.</div>
+
+<p>This text should become blue</p>
+
+<span>This text should become blue</span>
+
+<div>This text should be normal.</div>
+
+<p>This text should become blue</p>
+
+<span>This text should become blue</span>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('p').add('span').css('background-color', 'blue');
+
+});
+</script>
+</body>
+</html>

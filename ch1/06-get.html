@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The get() function and alternatives</title>
+</head>
+<body>
+  
+<h2>Various ways to get an array or a specific element</h2>
+  
+<p>First</p>
+<p>Second</p>
+<p>Third</p>
+
+<button id="get">Get</button><br/>
+<button id="to-array">To array</button><br/>
+<button id="make-array">Make array</button><br/>
+<button id="first">First</button><br/>
+<button id="get-first">Get first</button><br/>
+<button id="get-last">Get last</button>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  // same as next
+  $('#get').click(function() {
+    alert('Get p = ' + $('p').get());
+  });
+  
+  // same as previous, better readable
+  $('#to-array').click(function() {
+    alert('Get p = ' + $('p').toArray());
+  });
+  
+  // yet another alternative with the same functionality
+  $('#make-array').click(function() {
+    alert('Get p = ' + $.makeArray($('p')));
+  });
+  
+  // same as next
+  $('#first').click(function() {
+    alert('First p = ' + $('p')[0].innerHTML);
+  });
+  // same as previous
+  $('#get-first').click(function() {
+    alert('Get first p = ' + $('p').get(0).innerHTML);
+  });
+  
+  // ease of use: get the last element
+  $('#get-last').click(function() {
+    alert('Get last p = ' + $('p').get(-1).innerHTML);
+  });
+  
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The addClass() function</title>
+  <style>
+  /* please externalize this code to an external
+     .css file */
+     
+  p.initial {
+    background-color: blue;
+  }
+  
+  p.change {
+    font-weight: bold;
+  }
+  
+  p.big {
+    font-size: 72px;
+  }
+  </style>
+</head>
+<body>
+
+<p>This text will have a different appearance after 
+  the class change. Click on the text to make it a 
+  bit larger.</p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('p').addClass('initial');
+
+  $('p').click(function() {
+    $(this).addClass('change big');
+  });
+
+});
+</script>
+</body>
+</html>

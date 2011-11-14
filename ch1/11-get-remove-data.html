@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The data() function: removing</title>
+</head>
+<body>
+  
+<button id="store-data">Store data</button><br/>
+
+<button id="show-data">Show the data</button><br/>
+
+<button id="remove-data">Remove the data</button>
+  
+<p id="store-data">This paragraph element is the placeholder
+   for the data to be stored. Showing the data will reveal 
+   a little bit of the jQuery internals for storing data. 
+   You can ignore the technical details.</p>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+
+  $('#store-data').click(function() {
+    $('#store-data').data('myattribute', 
+      {a: 'first', b: 'second'});   
+  });
+
+  $('#show-data').click(function() {
+    alert('The data is: ' +     
+      JSON.stringify($('#store-data').data()));   
+  });
+  
+  $('#remove-data').click(function() {
+     $('#store-data').removeData();   
+  });
+});
+</script>
+</body>
+</html>

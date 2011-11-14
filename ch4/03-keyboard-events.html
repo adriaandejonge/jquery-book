@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Keyboard events</title>
+</head>
+<body>
+  
+<h2>Type in the text field below to see keyboard events</h2>
+
+<input type="text"> 
+
+<h1>Keydown</h1>
+
+<p id="keydown"></p>
+
+<h1>Keyup</h1>
+
+<p id="keyup"></p>
+
+<h1>Keypress</h1>
+
+<p id="keypress"></p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('input').keydown(function(event) {
+    $('#keydown').html('target = ' + event.target + '<br>' +
+            'type = ' + event.type + '<br>' +
+            'which = ' + event.which + '<br>');
+  });
+  
+  $('input').keyup(function(event) {
+    $('#keyup').html('target = ' + event.target + '<br>' +
+            'type = ' + event.type + '<br>' +
+            'which = ' + event.which + '<br>');
+  });
+
+  $('input').keypress(function(event) {
+    $('#keypress').html('target = ' + event.target + '<br>' +
+            'type = ' + event.type + '<br>' +
+            'which = ' + event.which + '<br>');
+  });
+
+});
+</script>
+</body>
+</html>

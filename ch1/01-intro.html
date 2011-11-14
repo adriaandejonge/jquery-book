@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Introduction</title>
+  <style>
+  /* 
+     CSS Style sheets are only inline to keep the
+     code examples together for readability. When
+     using this code in production, please 
+     externalize all style sheets.  
+  */  
+  .myclass {
+    background-color: black;
+    color: white;
+  }
+  </style>
+</head>
+<body>
+  
+<h1>Introduction</h1>
+
+<p>The HTML in the examples is kept as simple as 
+  possible.</p>
+  
+<p class="myclass">This is a placeholder for content</p>
+
+<p id="myid">You can click on this paragraph</p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// JavaScripts are only inline to keep the code
+// examples together for readability. When using
+// this code in production, please externalize
+// all JavaScript code.
+
+$(document).ready(function() {
+
+  $('p').css('font-weight', 'bold');
+  
+  $('.myclass').html('Different <em>content</em>');
+  
+  $('#myid').click(function() {
+    alert('Hello world!');
+  });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The data() function: storing</title>
+</head>
+<body>
+  
+<button id="store">Store some data in the paragraph
+   below</button><br/>
+
+<button id="show-data">Show the data in the paragraph 
+  below</button>
+  
+<p id="store-data">Even if you look in Firebug, you 
+  cannot see any data that is stored related to this 
+  element after storing it.</p>
+
+<button id="show-empty">Show that the next paragraph 
+  does not contain the data</button>
+
+<p id="empty-data">To show you that the data belongs 
+  to the other paragraph, this paragraph is intentionally 
+  left without any data.</p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+
+  $('#store').click(function() {
+     $('#store-data').data('myattribute', 'some data');   
+  });
+
+  $('#show-data').click(function() {
+    alert('The data is: ' + $('#store-data').data('myattribute'));    
+  });
+  
+  $('#show-empty').click(function() {
+    alert('The data is: ' + $('#empty-data').data('myattribute'));    
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Difference between prop() and attr()</title>
+  <style>
+  /* please externalize this code to an external
+     .css file */
+     
+  label[other="anything"] {
+    background-color: blue;
+  }
+  
+  </style>
+</head>
+<body>
+
+<h2>Convert the radio buttons into check boxes and 
+  change properties on the HTML</h2>
+
+<input type="radio" name="test" id="first">
+<label for=first>First</label>
+
+<input type="radio" name="test" id="second">
+<label for=second>Second</label>
+
+<input type="radio" name="test" id="third">
+<label for=third>Third</label>
+
+<button id="switch">Switch</button>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('#switch').click(function(){
+        
+    $('input').prop('type', 'checkbox');
+    
+    $('label').attr('other', 'anything');
+  
+  });
+  
+});
+</script>
+</body>
+</html>

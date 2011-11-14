@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Generate HTML using jQuery</title>
+  <style>
+  /* please externalize this code to an external
+     .css file */
+    .test {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+<p>Under this paragraph, you should see a yellow bulleted list</p>
+
+<div id="append-to-placeholder">
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  var htmlGen = function() {
+    return '<li>1</li><li>2</li>';
+  }
+
+  $('<p/>', {class: 'test', html:
+    $('<ul/>', {html: htmlGen})})
+    .appendTo('#append-to-placeholder');
+
+});
+</script>
+</body>
+</html>

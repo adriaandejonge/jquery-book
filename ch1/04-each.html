@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The each() function</title>
+</head>
+<body>
+
+<h2>This example demonstrates the each() function by
+  prepending a number before each paragraph below</h2>
+
+<p>First</p>
+<p>Second</p>
+<p>Third</p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  var values = ['a', 'b', 'c', 'd'];
+
+  $.each(values, function(index, value) {
+    values[index] = value.toUpperCase();
+  });
+
+  $('p').each(function(index, el) {
+    $(el).prepend(' - ');
+  });
+
+  $('p').each(function(index) {
+    $(this).prepend(values[index]);
+  });
+  
+});
+</script>
+</body>
+</html>

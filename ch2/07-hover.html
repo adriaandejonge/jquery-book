@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Simulating hover</title>
+</head>
+<body>
+
+<div>This text should be normal.</div>
+
+<div><div>This text should be get a red background when the 
+  mouse goes over it. And a blue background when the mouse
+   leaves</div></div>
+
+<div>This text should be NEVER get a red background</div>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('div > div:contains("red")').hover(
+    function() {$(this).css('background-color', 'red')}, 
+    function() {$(this).css('background-color', 'blue')});
+
+});
+</script>
+</body>
+</html>

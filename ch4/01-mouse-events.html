@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Mouse events</title>
+	<style>
+  /* please externalize this code to an external
+     .css file */
+	#target {
+		width: 150px;
+		height: 150px;
+		border: 1px solid red;
+	}
+	#block {
+		width: 50px;
+		height: 50px;
+		margin: 0px;
+		background-color: black;
+	}
+	</style>
+</head>
+<body>
+
+<h2>Move the mouse over the block to see events</h2>
+
+<div id="target"> 
+  <p id="block"></p>	
+</div>
+
+<h3>Mouse Up / Down</h3>
+
+<p class="mousedown mouseup"></p>
+
+<h3>Mouse Move</h3>
+
+<p class="mousemove"></p>
+
+<h3>Mouse (Dbl)Click</h3>
+
+<p class="click dblclick"></p>
+
+<h3>Mouse Enter / Leave</h3>
+
+<p class="mouseenter mouseleave"></p>
+
+<h3>Mouse Over/Out</h3>
+
+<p class="mouseover mouseout"></p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $.each(('click dblclick mousedown mouseup mousemove mouseover ' 
+        + 'mouseout mouseenter mouseleave').split(' '),
+   function( i, name ) {
+
+  $('#target').bind(name, function(event) {
+    $('.' + name).html('target = ' + event.target + ' ' +
+              'type = ' + event.type + ' ' +
+              'pageX = ' + event.pageX + ' ' +
+              'pageY = ' + event.pageY + ' ' +
+              'which = ' + event.which + ' ');
+    });
+  });
+
+});
+</script>
+</body>
+</html>

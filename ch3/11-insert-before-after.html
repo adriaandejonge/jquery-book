@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The after(), before(), insertAfter() 
+    and insertBefore() function</title>
+</head>
+<body>
+
+<h2>Click on the buttons to see the result of each
+  function</h2>
+
+<div id="target">
+
+<button id="before">before()</button><br>
+<button id="after">after()</button><br>
+<button id="insert-before">insertBefore()</button><br>
+<button id="insert-after">insertAfter()</button>
+
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('#before').click(function() {
+    $('#target').before('<p>Before</p>');
+  });
+  $('#after').click(function() {
+    $('#target').after('<p>After</p>');
+  });
+  $('#insert-before').click(function() {
+    $('<p>Insert Before</p>').insertBefore('#target');
+  });
+  $('#insert-after').click(function() {
+    $('<p>Insert After</p>').insertAfter('#target');
+  });
+
+});
+</script>
+</body>
+</html>

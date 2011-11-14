@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The delegate() and undelegate() functions for 
+    adding event listeners</title>
+</head>
+<body>
+  
+<h2>First click on Delegate, then click on li items 
+  to generate events.</h2>
+
+<ul id="main-list">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+
+<button id="delegate">Delegate</button>
+<button id="undelegate">Undelegate</button>
+<button id="add">Add a li item</button>
+
+<p id="placeholder" />
+
+<h2>And a seemingly unrelated list, that does not 
+  respond to clicks</h2>
+<ul>
+  <li>Other element</li>
+  <li>And yet another</li>
+</ul>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('#delegate').click(function() {
+    $('#main-list').delegate('li', 'click', function() {
+      $('#placeholder').append(
+        'Clicked ' + $(this).html() + '<br/>');
+    });
+  });
+  
+  $('#undelegate').click(function() {
+    $('#main-list').undelegate('li', 'click');
+  });
+  
+  $('#add').click(function() {
+    $('#main-list').append($('<li>Another</li>'));
+  });
+
+});
+</script>
+</body>
+</html>

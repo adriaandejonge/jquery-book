@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Nested selectors</title> 
+</head>
+<body>
+
+<div>This text should have a blue <span>background</span>.</div>
+
+<div>This text should be mostly normal, except for <em>the em 
+  part itself</em> or some <strong>strong parts</strong> 
+  because those do not have an em inside.</div>
+
+<div>This text should have a blue <strong>background</strong>.</div>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $(':not(:has(em))').css('background-color', 'blue');
+
+});
+</script>
+</body>
+</html>

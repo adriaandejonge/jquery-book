@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>$.noConflict()</title>
+</head>
+<body>
+
+<p>This example shows how to mix jQuery with non-jQuery code 
+  that uses the $ as a function name. Click on this paragraph
+  to test it.</p>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $.noConflict();
+
+  $ = function(name) {
+    alert('Hello, ' + name);
+  };
+
+  var clickHandler = function() {
+    $('Reader');
+  };
+
+  (function($) { 
+    $('p').click(clickHandler);
+  })(jQuery);
+  
+});
+</script>
+</body>
+</html>
