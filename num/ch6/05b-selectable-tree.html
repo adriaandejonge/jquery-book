@@ -1,0 +1,53 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Selectable Tree</title>
+05   <link type="text/css" rel="stylesheet"
+06    href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+07   <style>
+08   .ui-selectee {
+09     background-color: rgba(20,20,20,0.2);;
+10   }
+11   .ui-selected {
+12     border: 1px dashed black;
+13   }
+14   .ui-selecting {
+15     border: 1px solid red;
+16   }
+17     
+18   </style>
+19 </head>
+20 <body>
+21 
+22 <h2>Select elements below</h2>
+23 <ul id="target">
+24   <li>And a list</li>
+25   <li>With items</li>
+26   <li>And items containing subitems
+27     <ul class="child">
+28       <li>Sub 1</li>
+29       <li>Sub 2</li>
+30     </ul>
+31     </li>
+32     <li>And more items containing subitems
+33       <ul class="child">
+34         <li>Sub 4</li>
+35         <li>Sub 5</li>
+36       </ul>
+37       </li>
+38 </ul>
+39 
+40 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+41 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+42 
+43 <script>
+44 // please externalize this code to an external .js file
+45 $(document).ready(function() {
+46 
+47   $('ul#target').selectable();
+48 
+49 });
+50 </script>
+51 </body>
+52 </html>

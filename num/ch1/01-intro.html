@@ -1,0 +1,50 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Introduction</title>
+05   <style>
+06   /* 
+07      CSS Style sheets are only inline to keep the
+08      code examples together for readability. When
+09      using this code in production, please 
+10      externalize all style sheets.  
+11   */  
+12   .myclass {
+13     background-color: black;
+14     color: white;
+15   }
+16   </style>
+17 </head>
+18 <body>
+19   
+20 <h1>Introduction</h1>
+21 
+22 <p>The HTML in the examples is kept as simple as 
+23   possible.</p>
+24   
+25 <p class="myclass">This is a placeholder for content</p>
+26 
+27 <p id="myid">You can click on this paragraph</p>
+28 
+29 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+30 
+31 <script>
+32 // JavaScripts are only inline to keep the code
+33 // examples together for readability. When using
+34 // this code in production, please externalize
+35 // all JavaScript code.
+36 
+37 $(document).ready(function() {
+38 
+39   $('p').css('font-weight', 'bold');
+40   
+41   $('.myclass').html('Different <em>content</em>');
+42   
+43   $('#myid').click(function() {
+44     alert('Hello world!');
+45   });
+46 
+47 </script>
+48 </body>
+49 </html>

@@ -1,0 +1,38 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Slider</title>
+05   <link type="text/css" rel="stylesheet"
+06     href="css/smoothness/jquery-ui-1.8.16.custom.css">
+07   <style>
+08   #my-slider {
+09     width: 250px;  
+10   }
+11   </style> 
+12 </head>
+13 <body>
+14 
+15 <h2>The slider</h2>
+16 <div id="my-slider"></div>
+17 
+18 <h2>The slider value</h2>
+19 <input type="text" id="slider-value">
+20 
+21 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+22 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+23 
+24 <script>
+25 // please externalize this code to an external .js file
+26 $(document).ready(function() {
+27   
+28   $('#my-slider').slider({
+29     change: function() {
+30       $('#slider-value').attr('value', $(this).slider("value"));
+31     }
+32   });
+33      
+34 });
+35 </script>
+36 </body>
+37 </html>

@@ -1,0 +1,49 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Accordeon</title>
+05   <link type="text/css" rel="stylesheet"
+06    href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+07   <style>
+08     div#my-accordion {
+09         font-size: 14px;
+10     }
+11   </style>
+12 </head>
+13 <body>
+14 
+15 <div id="my-accordion">
+16   <h3>
+17     <a href="#first">Try to switch to the next part</a>
+18   </h3>
+19   <div>
+20     The content
+21   </div>
+22   <h3>
+23     <a href="#second">Next</a>
+24   </h3>
+25   <div>
+26     More content
+27   </div>
+28   <h3>
+29     <a href="#third">Last</a>
+30   </h3>
+31   <div>
+32     and the last content
+33   </div>
+34 </div>
+35 
+36 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+37 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+38 
+39 <script>
+40 // please externalize this code to an external .js file
+41 $(document).ready(function() {
+42 
+43   $('#my-accordion').accordion();
+44   
+45 });
+46 </script>
+47 </body>
+48 </html>

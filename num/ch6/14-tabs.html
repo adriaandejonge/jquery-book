@@ -1,0 +1,51 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Tabs</title>
+05   <link type="text/css" rel="stylesheet"
+06     href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+07   <style>
+08     body {
+09       font-size: 12px;
+10     }
+11    </style>
+12 </head>
+13 <body>
+14 
+15 <div id="my-tabs">
+16   <ul>
+17     <li>
+18       <a href="#first">First</a>
+19     </li>
+20     <li>
+21       <a href="#second">Second</a>
+22     </li>
+23     <li>
+24       <a href="#third">Third</a>
+25     </li>
+26   </ul>
+27   <div id="first">
+28     This is the text of the first tab
+29   </div>
+30   <div id="second">
+31     You have switched to the second tab
+32   </div>
+33   <div id="third">
+34     And finally, you have switched to the third tab
+35   </div>
+36 </div>
+37 
+38 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+39 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+40 
+41 <script>
+42 // please externalize this code to an external .js file
+43 $(document).ready(function() {
+44   
+45   $('#my-tabs').tabs();
+46      
+47 });
+48 </script>
+49 </body>
+50 </html>

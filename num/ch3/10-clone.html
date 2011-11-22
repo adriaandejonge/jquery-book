@@ -1,0 +1,72 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The clone() function</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08   div#template {
+09     display: none;
+10   }
+11   </style>
+12 </head>
+13 <body>
+14 
+15 <h2>Add rows under the repeating fields header using the 
+16   button below</h2>
+17 
+18 <form action="" method="post">
+19   
+20   <h2>Single fields</h2>
+21   
+22   <label for="first">First</label>
+23   <input type="text" name="first"><br>
+24   
+25   <label for="second">Second</label>
+26   <input type="text" name="second"><br>
+27   
+28   <h2>Repeating fields</h2>
+29   
+30   <button id="add-row">Add row</button><br>
+31 
+32   <div id="repeat"></div>
+33 
+34 </form>
+35 
+36 <div id="template">
+37   <label for="third">Third</label>
+38   <input type="text" name="third" ></br>
+39   
+40   <label for="fourth">Fourth</label>
+41   <input type="checkbox" name="fourth"></br>
+42 </div>
+43 
+44 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+45 
+46 <script>
+47 // please externalize this code to an external .js file
+48 $(document).ready(function() {
+49   var rowCount = 0;
+50   
+51   $('#add-row').click(function() {
+52     $('#template *')
+53       .clone()
+54       .filter('input')
+55         .attr('name', function(index, name) {
+56           return name +'[' + rowCount + ']';
+57         })
+58         .end()
+59       .appendTo('#repeat');
+60     rowCount++;
+61     
+62     // if the click handler is on a <button> element and the button 
+63     // is within a <form> element, return false to stop the page 
+64     // from reloading and inadvertently undoing the clone action
+65     return false;
+66   });
+67   
+68 });
+69 </script>
+70 </body>
+71 </html>

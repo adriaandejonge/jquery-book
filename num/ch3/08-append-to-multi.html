@@ -1,0 +1,38 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Generate HTML using jQuery</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08     .test {
+09       background-color: yellow;
+10     }
+11   </style>
+12 </head>
+13 <body>
+14 
+15 <p>Under this paragraph, you should see a yellow bulleted list</p>
+16 
+17 <div id="append-to-placeholder">
+18 </div>
+19 
+20 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+21 
+22 <script>
+23 // please externalize this code to an external .js file
+24 $(document).ready(function() {
+25   
+26   var htmlGen = function() {
+27     return '<li>1</li><li>2</li>';
+28   }
+29 
+30   $('<p/>', {class: 'test', html:
+31     $('<ul/>', {html: htmlGen})})
+32     .appendTo('#append-to-placeholder');
+33 
+34 });
+35 </script>
+36 </body>
+37 </html>

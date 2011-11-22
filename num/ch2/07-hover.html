@@ -1,0 +1,31 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Simulating hover</title>
+05 </head>
+06 <body>
+07 
+08 <div>This text should be normal.</div>
+09 
+10 <div><div>This text should be get a red background when the 
+11   mouse goes over it. And a blue background when the mouse
+12    leaves</div></div>
+13 
+14 <div>This text should be NEVER get a red background</div>
+15 
+16 
+17 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+18 
+19 <script>
+20 // please externalize this code to an external .js file
+21 $(document).ready(function() {
+22 
+23   $('div > div:contains("red")').hover(
+24     function() {$(this).css('background-color', 'red')}, 
+25     function() {$(this).css('background-color', 'blue')});
+26 
+27 });
+28 </script>
+29 </body>
+30 </html>

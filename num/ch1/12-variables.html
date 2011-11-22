@@ -1,0 +1,71 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Various variable testing functions</title>
+05 </head>
+06 <body>
+07   
+08 <p>This is a list of variable type tests, followed by
+09   a few modification functions:</p>
+10 <p id="placeholder"></p>
+11 
+12 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+13 
+14 <script>
+15 // please externalize this code to an external .js file
+16 $(document).ready(function() {
+17   
+18   var testObj = {},
+19       testVar = 1,
+20       testFun = function() {},
+21       testArr = [1, 2, 2];
+22   
+23   var results = [];
+24   
+25   results.push('testObj = ' + JSON.stringify(testObj));
+26   results.push('testVar = ' + JSON.stringify(testVar));
+27   results.push('testFun = ' + JSON.stringify(testFun));
+28   results.push('testArr = ' + JSON.stringify(testArr));
+29   
+30   results.push('<br>');
+31   
+32   results.push('type(testObj) = ' + $.type(testObj));
+33   results.push('type(testVar) = ' + $.type(testVar));
+34   results.push('type(testFun) = ' + $.type(testFun));
+35   results.push('type(testArr) = ' + $.type(testArr));
+36   
+37   results.push('<br>');
+38   
+39   results.push('inArray(3, testArr) = ' 
+40                 + $.inArray(3, testArr));
+41   
+42   results.push('isArray(testArr) = ' 
+43                 + $.isArray(testArr));
+44   
+45   results.push('isEmptyObject(testObj) = ' 
+46                 + $.isEmptyObject(testObj));
+47   
+48   results.push('isPlainObject(testObj) = ' 
+49                 + $.isPlainObject(testObj));
+50   
+51   results.push('isFunction(testFun) = ' 
+52                 + $.isFunction(testFun));
+53                 
+54   results.push('<br>');
+55   
+56   results.push('merge(testArr, [3, 3, 4]) = ' 
+57                 + $.merge(testArr, [3, 3, 4]));
+58   
+59   results.push('unique(testArr) = ' 
+60                 + $.unique(testArr));
+61                 
+62   results.push('merge(testArr, [5, 6]) = ' 
+63                 + $.merge(testArr, [5, 6]));
+64                 
+65   $('#placeholder').append(results.join('<br>'));
+66   
+67 });
+68 </script>
+69 </body>
+70 </html>

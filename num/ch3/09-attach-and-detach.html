@@ -1,0 +1,65 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The attach() and detach() function</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08   .detaching button.attach {
+09     display: none;
+10   }
+11   .attaching button.detach {
+12     display: none;
+13   }
+14   </style>
+15 </head>
+16 <body class="detaching">
+17 
+18 <div> 
+19   <button class=attach>Attach</botton>
+20   <button class=detach>Detach</button>
+21   <span>First element</span>
+22 </div>
+23 <div> 
+24   <button class=attach>Attach</botton>
+25   <button class=detach>Detach</button>
+26   <span>Second element</span>
+27 </div>
+28 <div> 
+29   <button class=attach>Attach</botton>
+30   <button class=detach>Detach</button>
+31   <span>Third element</span>
+32 </div>
+33 <div> 
+34   <button class=attach>Attach</botton>
+35   <button class=detach>Detach</button>
+36   <span>Fourth element</span>
+37 </div>
+38 <div> 
+39   <button class=attach>Attach</botton>
+40   <button class=detach>Detach</button>
+41   <span>Fifth element</span>
+42 </div>
+43 
+44 
+45 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+46 
+47 <script>
+48 // please externalize this code to an external .js file
+49 $(document).ready(function() {
+50   var el;
+51 
+52   $('.detach').click(function() {
+53     el = $(this).parent().children('span:first').detach();
+54     $('body').removeClass('detaching').addClass('attaching');
+55   });
+56   $('.attach').click(function() {
+57     el.appendTo($(this).parent());
+58     $('body').removeClass('attaching').addClass('detaching');
+59   });
+60   
+61 });
+62 </script>
+63 </body>
+64 </html>

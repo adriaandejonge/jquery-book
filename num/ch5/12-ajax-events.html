@@ -1,0 +1,36 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>AJAX related event handlers</title>
+05 </head>
+06 <body>
+07 
+08 <h2>Press the button to perform the request.</h2>
+09 
+10 <button id="trigger">GET</button>
+11 <br>
+12 <div id="target"> </div>
+13 <div id="log"> </div>
+14 
+15 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+16 
+17 <script>
+18 // please externalize this code to an external .js file
+19 $(document).ready(function() {
+20 
+21   $('#trigger').click(function() {
+22     $('#target').load('test-snippet.html'); 
+23   });
+24 
+25   $.each(('ajaxError ajaxSend ajaxStart ajaxStop ' +
+26           'ajaxSuccess ajaxComplete').split(' '),
+27     function( i, name ) {
+28       $('#log').bind(name, function(event, xhr) {
+29       $(this).append('Event: ' + event.type + '<br/>');
+30     });
+31   });
+32 });
+33 </script>
+34 </body>
+35 </html>

@@ -1,0 +1,44 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The data() function: removing</title>
+05 </head>
+06 <body>
+07   
+08 <button id="store-data">Store data</button><br/>
+09 
+10 <button id="show-data">Show the data</button><br/>
+11 
+12 <button id="remove-data">Remove the data</button>
+13   
+14 <p id="store-data">This paragraph element is the placeholder
+15    for the data to be stored. Showing the data will reveal 
+16    a little bit of the jQuery internals for storing data. 
+17    You can ignore the technical details.</p>
+18 
+19 
+20 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+21 
+22 <script>
+23 // please externalize this code to an external .js file
+24 $(document).ready(function() {
+25 
+26 
+27   $('#store-data').click(function() {
+28     $('#store-data').data('myattribute', 
+29       {a: 'first', b: 'second'});   
+30   });
+31 
+32   $('#show-data').click(function() {
+33     alert('The data is: ' +     
+34       JSON.stringify($('#store-data').data()));   
+35   });
+36   
+37   $('#remove-data').click(function() {
+38      $('#store-data').removeData();   
+39   });
+40 });
+41 </script>
+42 </body>
+43 </html>

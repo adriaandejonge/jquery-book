@@ -1,0 +1,65 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Use serialize() for side field validation</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08   .error {
+09     border-color: red;
+10   }
+11   </style>
+12 </head>
+13 <body>
+14 
+15 <h2>Fill out the fields and see the result.</h2>
+16 
+17 <form action="" method="post">
+18   <label for="first_field">First field</label>
+19   <input type="text" name="first_field" 
+20     value="" id="first_field"><br>
+21     
+22   <label for="second_field">Second field</label>
+23   <input type="text" name="second_field" 
+24     value="" id="second_field"><br>
+25     
+26   <label for="third_field">Third field</label>
+27   <input type="text" name="third_field" 
+28     value="" id="third_field"><br>
+29     
+30   <label for="fourth_field">Fourth field</label>
+31   <input type="text" name="fourth_field" 
+32     value="" id="fourth_field"><br>
+33     
+34   <input type="submit" name="submit" value="Submit" id="submit">
+35   
+36 </form>
+37 
+38 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+39 
+40 <script>
+41 // please externalize this code to an external .js file
+42 $(document).ready(function() {
+43   
+44   $('input').filter(':text').addClass('error');
+45 
+46   $('input').change(function() {
+47 
+48     $.get('validate', $('form').serialize())
+49     .done(function(data) {
+50       
+51       $('input').removeClass('error');
+52     
+53       $.each(data, function(i, name) {
+54         $('#' + name).addClass('error');
+55       });
+56       
+57     });
+58     
+59   });
+60 
+61 });
+62 </script>
+63 </body>
+64 </html>

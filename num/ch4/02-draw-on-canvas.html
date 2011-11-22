@@ -1,0 +1,50 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Drawing in a canvas using mouse events</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08   #target {
+09     border: 1px solid red;
+10   }
+11   </style>
+12 </head>
+13 <body>
+14   
+15 <h2>Draw pixels in the canvas:</h2>
+16 
+17 <canvas id="target" width="150px" height="150px"></canvas>
+18 
+19 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+20 
+21 <script>
+22 // please externalize this code to an external .js file
+23 $(document).ready(function() {
+24 
+25   var context = $('#target')[0].getContext('2d');
+26   var draw = false;
+27   
+28   $('#target')
+29     .mousedown(function() {
+30     draw = true;  
+31   })
+32     .mouseup(function() {
+33     draw = false; 
+34   })
+35     .mouseout (function() {
+36     draw = false; 
+37   })
+38   .mousemove(function(event) {
+39     var pos = $(this).position();
+40     if(draw){
+41       context.fillRect(event.pageX - pos.left, 
+42               event.pageY - pos.top, 2, 2);
+43     }
+44   });
+45 
+46 });
+47 </script>
+48 </body>
+49 </html>

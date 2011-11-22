@@ -1,0 +1,37 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The wrapInner() function</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08   div.wrapper {
+09     border: 1px solid red;
+10   }
+11   </style>
+12 </head>
+13 <body>
+14 
+15 <h2>The paragraphs below are modified with wrapInner()</h2>
+16 
+17 <p>Paragraph to wrap</p>
+18 <p>Paragraph to wrap</p>
+19 
+20 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+21 
+22 <script>
+23 // please externalize this code to an external .js file
+24 $(document).ready(function() {
+25   
+26   $('p').wrapInner('<div class="wrapper"/>');
+27 
+28   // This does not work with wrapInner() :
+29   // $('p').click(function() {
+30   //   $(this).unwrap('<div class="wrapper"/>');
+31   // });
+32   
+33 });
+34 </script>
+35 </body>
+36 </html>

@@ -1,0 +1,29 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Dialog</title>
+05   <link type="text/css" rel="stylesheet"
+06     href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+07 </head>
+08 <body>
+09 
+10 <p id="my-dialog">This is the text of my dialog</p>
+11 
+12 <button>Open dialog</button>
+13 
+14 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+15 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+16 
+17 <script>
+18 // please externalize this code to an external .js file
+19 $(document).ready(function() {
+20   
+21   $('button').click(function() {
+22     $('#my-dialog').dialog();
+23   });
+24   
+25 });
+26 </script>
+27 </body>
+28 </html>

@@ -1,0 +1,33 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The AJAX get() request function</title>
+05 </head>
+06 <body>
+07 
+08 <h2>Press the button to perform the request.</h2>
+09 
+10 <button id="trigger">GET</button>
+11 <br>
+12 <div id="target"></div>
+13 
+14 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+15 
+16 <script>
+17 // please externalize this code to an external .js file
+18 $(document).ready(function() {
+19 
+20   $('#trigger').click(function() {
+21 
+22     $.get('02a-test-values.json', function(data) {
+23 
+24       $('#target').append('The returned value is: ' + data.name);
+25     
+26     }, 'json');
+27   });
+28 
+29 });
+30 </script>
+31 </body>
+32 </html>

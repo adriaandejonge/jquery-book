@@ -1,0 +1,42 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The done() fail() always() function</title>
+05 </head>
+06 <body>
+07 
+08 <h2>Press the button to perform the request.</h2>
+09 
+10 <button id="trigger">GET</button>
+11 <br>
+12 <div id="target"> 
+13 
+14 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+15 
+16 <script>
+17 // please externalize this code to an external .js file
+18 $(document).ready(function() {
+19 
+20   $('#trigger').click(function() {
+21 
+22     // avoid error() success() complete() 
+23     // those are deprecated in jQuery 1.8
+24     // use done() fail() always() instead
+25 
+26     $.ajax({url:'test-values.json', dataType: 'json'})
+27     .done( function(data) {
+28       $('#target').append('The returned value is: ' 
+29                             + data.name + '<br>');
+30     })
+31     .fail(function() {
+32       $('#target').append('The AJAX call failed.<br>');
+33     })
+34     .always(function() {
+35       $('#target').append('finished anyway.');
+36     });
+37   });
+38 });
+39 </script>
+40 </body>
+41 </html>

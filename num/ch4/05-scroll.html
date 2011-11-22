@@ -1,0 +1,35 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Listening to scroll events</title>
+05 </head>
+06 <body>
+07 
+08 <h2>Scroll the page to see scroll events</h2>
+09 
+10 <div id="placeholder" /> 
+11 
+12 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+13 
+14 <script>
+15 // please externalize this code to an external .js file
+16 $(document).ready(function() {
+17   
+18   // make a long page so you can scroll without wasting
+19   // too many pages in the book
+20   var array = [];
+21   for(var i = 0; i < 100; i++) {
+22     array.push('<p>Element ' + i + '</p>');
+23   }  
+24   $('#placeholder').html(array.join(''));
+25   
+26   $(this).scroll(function(event) {
+27     var scrollTop = $(window).scrollTop();
+28     $('p').html('scrollTop: ' + scrollTop);
+29   });
+30 
+31 });
+32 </script>
+33 </body>
+34 </html>

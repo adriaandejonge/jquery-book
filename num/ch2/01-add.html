@@ -1,0 +1,32 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Combine two element sets</title> 
+05 </head>
+06 <body>
+07 
+08 <div>This text should be normal.</div>
+09 
+10 <p>This text should become blue</p>
+11 
+12 <span>This text should become blue</span>
+13 
+14 <div>This text should be normal.</div>
+15 
+16 <p>This text should become blue</p>
+17 
+18 <span>This text should become blue</span>
+19 
+20 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+21 
+22 <script>
+23 // please externalize this code to an external .js file
+24 $(document).ready(function() {
+25 
+26   $('p').add('span').css('background-color', 'blue');
+27 
+28 });
+29 </script>
+30 </body>
+31 </html>

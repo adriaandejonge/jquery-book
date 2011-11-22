@@ -1,0 +1,33 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery Version</title>
+05 </head>
+06 <body>
+07   
+08 <p>The jQuery version is: <span id="placeholder"/></p>
+09 
+10 
+11 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+12 
+13 <script>
+14 // please externalize this code to an external .js file
+15 $(document).ready(function() {
+16 
+17   var a = {b: 1, c: 2};
+18   var b = $('#placeholder');
+19   var jqVersion = $.fn.jquery;
+20 
+21   if(a.jquery) {
+22     a.html(jqVersion + (' (a)'));
+23   }
+24 
+25   if(b.jquery) {
+26     b.html(jqVersion + (' (b)'));
+27   }
+28   
+29 });
+30 </script>
+31 </body>
+32 </html>

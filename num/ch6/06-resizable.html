@@ -1,0 +1,44 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Resizable</title>
+05   <link type="text/css" rel="stylesheet"
+06    href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+07   <style>
+08   #my-resizable {
+09     width: 250px;
+10     height: 100px;
+11     border: 1px solid black;
+12     overflow: hidden;
+13   }
+14   </style>
+15 </head>
+16 <body>
+17 
+18 <div id="my-resizable">
+19   <h2>Try to resize this div</h2>
+20   <p>To help you a little bit, here is some text. Lorem ipsum dolor
+21   sit amet, consectetur adipiscing elit. Aenean porttitor elit
+22   iaculis orci lacinia sollicitudin. Maecenas neque justo,
+23   vestibulum vitae viverra at, tincidunt vitae nisi. Vestibulum ante
+24   ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+25   Curae; Suspendisse turpis erat, auctor eu posuere sit amet, tempor
+26   at elit. Donec sodales, ante vitae luctus ultricies, sapien lectus
+27   adipiscing lacus, non adipiscing felis mauris vel diam.</p>
+28 </div>
+29 
+30 
+31 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+32 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+33 
+34 <script>
+35 // please externalize this code to an external .js file
+36 $(document).ready(function() {
+37 
+38   $('#my-resizable').resizable();
+39 
+40 });
+41 </script>
+42 </body>
+43 </html>

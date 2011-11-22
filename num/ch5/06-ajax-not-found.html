@@ -1,0 +1,39 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Test case: page not found</title>
+05 </head>
+06 <body>
+07 
+08 <h2>Press the button to perform the request.</h2>
+09 
+10 <button id="trigger">GET</button>
+11 <br>
+12 <div id="target"> 
+13 
+14 
+15 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+16 
+17 <script>
+18 // please externalize this code to an external .js file
+19 $(document).ready(function() {
+20 
+21   $('#trigger').click(function() {
+22 
+23     $.ajax('not-found')
+24     .done(function(data, xhr) {
+25       $('#target').append('Unexpected success... ' +
+26               '(actually not a good thing)');
+27     })
+28     .fail(function(xhr, text, error) {
+29       $('#target').append('Failed as expected (good!). Code ' + 
+30       xhr.status + ' and text ' + error);
+31     });
+32     
+33   });
+34 
+35 });
+36 </script>
+37 </body>
+38 </html>

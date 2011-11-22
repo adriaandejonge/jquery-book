@@ -1,0 +1,49 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Selectable</title>
+05   <style>
+06   .ui-selectee {
+07     background-color: rgba(20,20,20,0.2);
+08   }
+09   .ui-selected {
+10     background-color: yellow;
+11   }
+12   .ui-selecting {
+13     background-color: rgba(20,20,20,0.5);
+14   }
+15     
+16   </style>
+17 </head>
+18 <body>
+19 
+20 <h2>Select elements below</h2>
+21 <ul id="target">
+22   <li>And a list</li>
+23   <li>With items</li>
+24   <li>1</li>
+25   <li>2</li>
+26   <li>4</li>
+27   <li>5</li>
+28 </ul>
+29 
+30 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+31 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+32 
+33 <script>
+34 // please externalize this code to an external .js file
+35 $(document).ready(function() {
+36 
+37   $('ul#target').selectable({
+38     selected: function(event, ui) {
+39       console.log(event);
+40       console.log(ui);
+41       $(ui.selected).html('SELECTED');
+42     }
+43   });
+44 
+45 });
+46 </script>
+47 </body>
+48 </html>

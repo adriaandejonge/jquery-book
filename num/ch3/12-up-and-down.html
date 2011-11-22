@@ -1,0 +1,65 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Pushing elements up and down</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08   div:first-of-type button.up {
+09     visibility: hidden;
+10   }
+11   div:last-of-type button.down {
+12     visibility: hidden;
+13   }
+14   </style>
+15 </head>
+16 <body>
+17 
+18 <h2>Click on the up and down buttons to move the rows</h2>
+19 
+20 <div> 
+21   <button class=up>Up</botton>
+22   <button class=down>Down</button>
+23   This was initially the first element.
+24 </div>
+25 <div> 
+26   <button class=up>Up</botton>
+27   <button class=down>Down</button>
+28   This was initially the second element.
+29 </div>
+30 <div> 
+31   <button class=up>Up</botton>
+32   <button class=down>Down</button>
+33   This was initially the third element.
+34 </div>
+35 <div> 
+36   <button class=up>Up</botton>
+37   <button class=down>Down</button>
+38   This was initially the fourth element.
+39 </div>
+40 <div> 
+41   <button class=up>Up</botton>
+42   <button class=down>Down</button>
+43   This was initially the fifth element.
+44 </div>
+45 
+46 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+47 
+48 <script>
+49 // please externalize this code to an external .js file
+50 $(document).ready(function() {
+51 
+52   $('.up').click(function() {
+53   var parent = $(this).parent();
+54   parent.insertBefore(parent.prev());
+55   });
+56   $('.down').click(function() {
+57   var parent = $(this).parent();
+58   parent.insertAfter(parent.next());
+59   });
+60 
+61 });
+62 </script>
+63 </body>
+64 </html>

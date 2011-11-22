@@ -1,0 +1,37 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The wrapAll() function</title>
+05   <style>
+06   /* please externalize this code to an external
+07      .css file */
+08   div.wrapper {
+09     border: 1px solid red;
+10   }
+11   </style>
+12 </head>
+13 <body>
+14 
+15 <h2>Paragraphs below are wrapped with wrapAll() Click 
+16     the paragraphs to unwrap()</h2>
+17 
+18 <p>Paragraph to wrap</p>
+19 <p>Paragraph to wrap</p>
+20 
+21 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+22 
+23 <script>
+24 // please externalize this code to an external .js file
+25 $(document).ready(function() {
+26   
+27   $('p').wrapAll('<div class="wrapper"/>');
+28 
+29   $('p').click(function(){
+30     $(this).unwrap('<div class="wrapper"/>');
+31   });
+32   
+33 });
+34 </script>
+35 </body>
+36 </html>

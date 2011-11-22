@@ -1,0 +1,40 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Select elements within a context</title>
+05 </head>
+06 <body>
+07 
+08 <div id="not-the-context">
+09   <h2>This container is outside the context.</h2>
+10   <p>So this text will remain unchanged</p>  
+11 </div>
+12 
+13 <div id="the-context">
+14   <h2>This is the container context.</h2>
+15   <p>So this text should get a blue background</p>  
+16 </div>
+17 
+18 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+19 
+20 <script>
+21 // please externalize this code to an external .js file
+22 $(document).ready(function() {
+23 
+24   var selectContext = $('p', $('#the-context')[0]);
+25   var selectOther = $('#not-the-context p');
+26   
+27   selectContext
+28     .css('background-color', 'blue')
+29     .append('<p>Context element is ' + 
+30       selectContext.context.nodeName + '</p>');
+31     
+32   selectOther
+33     .append('<p>Not the element is ' + 
+34       selectOther.context.nodeName + '</p>');
+35   
+36 });
+37 </script>
+38 </body>
+39 </html>

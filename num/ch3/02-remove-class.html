@@ -1,0 +1,38 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The removeClass() function</title>
+05   <style>
+06     .no-js {
+07     display: none;
+08   }
+09   </style>
+10 </head>
+11 <body>
+12   
+13 <p>This page contains both text that is always 
+14   available and text that is only visible when 
+15   JavaScript is available</p>
+16 
+17 <p class="no-js">This could be a part of the site that
+18    is JavaScript dependent and is better hidden when 
+19    JavaScript is unavailable.</p>
+20 
+21 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+22 
+23 <script>
+24 // please externalize this code to an external .js file
+25 $(document).ready(function() {
+26 
+27   $('.no-js').removeClass('no-js');
+28   
+29   // removeClass() also works without parameter; risk 
+30   // removing other classes
+31   //
+32   //$('.no-js').removeClass();
+33 
+34 });
+35 </script>
+36 </body>
+37 </html>

@@ -1,0 +1,34 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The support property</title>
+05 </head>
+06 <body>
+07   
+08 <p>The paragraph under this contains the supported 
+09   properties of this browser:</p>
+10 
+11 <p id="placeholder"></p>
+12 
+13 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+14 
+15 <script>
+16 // please externalize this code to an external .js file
+17 $(document).ready(function() {
+18   
+19 var result = [];
+20  $.each(
+21  ('ajax boxModel changeBubbles checkClone checkOn cors cssFloat ' +
+22  'hrefNormalized htmlSerialize leadingWhitespace noCloneChecked ' +
+23  'noCloneEvent opacity optDisabled optSelected style ' +
+24  'submitBubbles tbody').split(' '), function(index, name) {
+25   result.push(name + ' = ' + $.support[name] + '<br/>');
+26 });
+27 
+28   $('#placeholder').html(result.join('') );
+29   
+30 });
+31 </script>
+32 </body>
+33 </html>

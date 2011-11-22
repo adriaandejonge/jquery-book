@@ -1,0 +1,37 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Change the this object of a function</title>
+05 </head>
+06 <body>
+07 
+08 <p>This text would change if a proxy is used pointing 
+09    to this paragraph</p>
+10 
+11 
+12 <button id="regular">Regular button - changes 
+13   itself when pressed</button><br>
+14 
+15 <button id="proxy">Proxy button - changes
+16   the paragraph when pressed</button>
+17 
+18 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+19 
+20 <script>
+21 // please externalize this code to an external .js file
+22 
+23 $(document).ready(function() {
+24 
+25   var handler = function() {
+26     $(this).html('Changed');
+27   }
+28 
+29   $('#regular').click(handler);
+30   
+31   $('#proxy').click($.proxy(handler, $('p')))
+32 
+33 });
+34 </script>
+35 </body>
+36 </html>

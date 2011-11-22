@@ -1,0 +1,34 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Pseudo-selectors for form elements</title>
+05 </head>
+06 <body>
+07 
+08 <form action="" method="post">
+09 
+10   <input type="text" name="mytext" value="" id="mytext"><br>
+11   <input type="submit" name="mysubmit" value="" id="mysubmit"><br>
+12   <input type="button" name="mybutton" value="" id="mybutton"><br>
+13   <input type="radio" name="myradio" value="" id="myradio"><br>
+14   <input type="checkbox" name="mycheckbox" value="" id="mycheckbox">
+15   
+16 </form>
+17 
+18 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+19 
+20 <script>
+21 // please externalize this code to an external .js file
+22 $(document).ready(function() {
+23 
+24   $(':text').css('border-color', 'blue');
+25   $(':submit').css('border-color', 'blue');
+26   $(':button').css('border-color', 'blue');
+27   $(':radio').prop('checked', 'true');
+28   $(':checkbox').prop('checked', 'true');
+29 
+30 });
+31 </script>
+32 </body>
+33 </html>

@@ -1,0 +1,48 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>jQuery UI Sortable Tree</title>
+05   <link type="text/css" rel="stylesheet"
+06    href="css/smoothness/jquery-ui-1.8.16.custom.css">
+07   <style>
+08   ul {
+09     border: 1px dashed gray;
+10     margin: 10px;
+11     padding: 10px 10px 10px 30px;
+12   }
+13   </style>
+14 </head>
+15 <body>
+16 
+17 <h2>Move elements in this tree</h2>
+18 <ul id="target">
+19   <li>And a list</li>
+20   <li>With items</li>
+21   <li>And items containing subitems
+22     <ul class="child">
+23       <li>Sub 1</li>
+24       <li>Sub 2</li>
+25     </ul>
+26     </li>
+27     <li>And more items containing subitems
+28       <ul class="child">
+29         <li>Sub 4</li>
+30         <li>Sub 5</li>
+31       </ul>
+32     </li>
+33 </ul>
+34 
+35 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+36 <script src="jquery-ui-1.8.16.custom.min.js"></script>
+37 
+38 <script>
+39 // please externalize this code to an external .js file
+40 $(document).ready(function() {
+41 
+42   $('ul').sortable({connectWith: 'ul'});
+43 
+44 });
+45 </script>
+46 </body>
+47 </html>

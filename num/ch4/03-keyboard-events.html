@@ -1,0 +1,52 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Keyboard events</title>
+05 </head>
+06 <body>
+07   
+08 <h2>Type in the text field below to see keyboard events</h2>
+09 
+10 <input type="text"> 
+11 
+12 <h1>Keydown</h1>
+13 
+14 <p id="keydown"></p>
+15 
+16 <h1>Keyup</h1>
+17 
+18 <p id="keyup"></p>
+19 
+20 <h1>Keypress</h1>
+21 
+22 <p id="keypress"></p>
+23 
+24 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+25 
+26 <script>
+27 // please externalize this code to an external .js file
+28 $(document).ready(function() {
+29 
+30   $('input').keydown(function(event) {
+31     $('#keydown').html('target = ' + event.target + '<br>' +
+32             'type = ' + event.type + '<br>' +
+33             'which = ' + event.which + '<br>');
+34   });
+35   
+36   $('input').keyup(function(event) {
+37     $('#keyup').html('target = ' + event.target + '<br>' +
+38             'type = ' + event.type + '<br>' +
+39             'which = ' + event.which + '<br>');
+40   });
+41 
+42   $('input').keypress(function(event) {
+43     $('#keypress').html('target = ' + event.target + '<br>' +
+44             'type = ' + event.type + '<br>' +
+45             'which = ' + event.which + '<br>');
+46   });
+47 
+48 });
+49 </script>
+50 </body>
+51 </html>

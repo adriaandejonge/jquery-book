@@ -1,0 +1,34 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The index() function</title>
+05 </head>
+06 <body>
+07   
+08 <h1>Click on the paragraphs to see their index</h1> 
+09 
+10 <p>First</p>
+11 <span>Not a paragraph so it does not respond to your clicks</span>
+12 <p>Second</p>
+13 <p>Third</p>
+14 <p>Some nested paragraphs:
+15   <p>Nested 1</p>
+16   <p>Nested 2</p> 
+17 </p>
+18 <p>And a final non-nested paragraph</p>
+19 
+20 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+21 
+22 <script>
+23 // please externalize this code to an external .js file
+24 $(document).ready(function() {
+25 
+26   $('p').click(function() {
+27     alert('Index of clicked item is: ' + $(this).index())
+28   });
+29   
+30 });
+31 </script>
+32 </body>
+33 </html>

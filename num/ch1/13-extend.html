@@ -1,0 +1,75 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The extend() function</title>
+05 </head>
+06 <body>
+07   
+08 <p>First object:</p>
+09 
+10 <p id="object-1"></p>
+11 
+12 <p>Second object:</p>
+13 
+14 <p id="object-2"></p>
+15 
+16 <p>Result object:</p>
+17 
+18 <p id="object-result"></p>
+19 
+20 <button id="extend">Extend</button>
+21 
+22 <button id="extend-new">Extend into empty</button>
+23 
+24 <button id="reset">Reset</button>
+25 
+26 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+27 
+28 <script>
+29 // please externalize this code to an external .js file
+30 $(document).ready(function() {
+31 
+32   var reset,
+33         object1 = object2 = objectresult = {};
+34 
+35   var show = function() {
+36     $('#object-1').html(JSON.stringify(object1));
+37     $('#object-2').html(JSON.stringify(object2));
+38     $('#object-result').html(JSON.stringify(objectresult));
+39   };
+40   
+41   (reset = function() {
+42     object1 = {
+43       a: 'original a',
+44       b: 'original b',
+45       c: 'original c'
+46     };
+47     object2 = {
+48       c: 'different c',
+49       d: 'different d'
+50     };
+51     objectresult = {};  
+52     show();
+53   })();
+54   
+55   $('#extend').click(function() {
+56     // has side effects for object1
+57     objectresult = $.extend(object1, object2);
+58     show();
+59   });
+60   
+61   $('#extend-new').click(function() {
+62     // without side effects for object1
+63     objectresult = $.extend({}, object1, object2);
+64     show();
+65   });
+66   
+67   $('#reset').click(function() {
+68     reset();
+69   });
+70   
+71 });
+72 </script>
+73 </body>
+74 </html>

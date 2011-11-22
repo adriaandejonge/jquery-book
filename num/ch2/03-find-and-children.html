@@ -1,0 +1,39 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The find() and children() function</title>
+05 </head>
+06 <body>
+07 
+08 <h2>This code highlights the 'special' cases using both 
+09   children() and find() to show the difference</h2>
+10 
+11 <ul id="ul-root">
+12   <li>1</li>
+13   <li>2
+14     <ul>
+15       <li>2.1</li>
+16       <li class="special">2.2</li>
+17       <li>2.3</li>
+18       <li>2.4</li>
+19     </ul>
+20   </li>
+21   <li class="special">3</li>
+22   <li>4</li>
+23 </ul>
+24 
+25 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+26 
+27 <script>
+28 // please externalize this code to an external .js file
+29 $(document).ready(function() {
+30 
+31   $('#ul-root').children('.special').css('font-weight', 'bold');
+32   
+33   $('#ul-root').find('.special').css('background-color', 'red');
+34 
+35 });
+36 </script>
+37 </body>
+38 </html>

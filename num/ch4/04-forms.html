@@ -1,0 +1,55 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>Form events</title>
+05 </head>
+06 <body>
+07 
+08 
+09 <h2>Change the input in the boxes and see the event generated 
+10   while editing under the form</h2>
+11 
+12 <form action="" method="post">
+13   
+14   <label for="first_field">First field</label>
+15   <input type="text" name="first_field" 
+16     value="" id="first_field"><br>
+17     
+18   <label for="second_field">Second field</label>
+19   <input type="text" name="second_field" 
+20     value="" id="second_field"><br>
+21     
+22   <label for="third_field">Third field</label>
+23   <input type="text" name="third_field" 
+24     value="" id="third_field"><br>
+25     
+26   <label for="fourth_field">Fourth field</label>
+27   <input type="text" name="fourth_field" 
+28     value="" id="fourth_field"><br>
+29     
+30   <input type="submit" name="submit" value="Submit" id="submit">
+31 
+32 </form>
+33 
+34 <p id="placeholder" />
+35 
+36 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+37 
+38 <script>
+39 // please externalize this code to an external .js file
+40 $(document).ready(function() {
+41   
+42   $('input').bind('blur change focus select submit', 
+43                   function(event) {
+44     
+45     $('#placeholder').append('target = ' +
+46         event.target.getAttribute('id') + ' ' +
+47         'type = ' + event.type + ' <br/>');
+48               
+49   });
+50 
+51 });
+52 </script>
+53 </body>
+54 </html>
