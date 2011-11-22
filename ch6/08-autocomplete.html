@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>jQuery UI Draggable</title>
+  <link type="text/css" rel="stylesheet"
+   href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+  <style>
+    .ui-widget {
+        font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="my-container">
+  <label for="my-autocomplete">Type to see how this works</label>
+  <input type="text" id="my-autocomplete">
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="jquery-ui-1.8.16.custom.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  var loremIpsum = [
+  'Lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
+   'adipiscing', 'elit', 'Donec', 'fermentum', 'tortor', 'et',
+   'ante', 'ullamcorper', 'eget', 'posuere', 'ligula'   
+  ];
+
+  $('#my-autocomplete').autocomplete({source: loremIpsum});
+  
+});
+</script>
+</body>
+</html>

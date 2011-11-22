@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>jQuery UI Progressbar</title>
+  <link type="text/css" rel="stylesheet"
+    href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+</head>
+<body>
+
+<div id="my-progress"></div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="jquery-ui-1.8.16.custom.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  var el = $('#my-progress');
+  
+  el.on('progressbarcreate', function(event, ui) {
+    el.after('<p>Start value: ' + el.progressbar('value') + '</p>');
+  });
+  
+  el.progressbar();
+  
+  // animate progress
+  var count = 0;  
+  setInterval(function() {
+    if(count++ > 100) count = 0;
+    el.progressbar('value', count);
+  },100);
+     
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>jQuery UI Button</title>
+  <link type="text/css" rel="stylesheet"
+   href="css/smoothness/jquery-ui-1.8.16.custom.css">
+</head>
+<body>
+
+<div id="target">
+  <button>My button</button>
+  <input type="submit" id="my-submit" value="My submit">
+  <a href="http://www.google.com">My link</a>
+  <p>
+    My paragraph
+  </p>
+  <ul>
+    <li>My unordered list</li>
+    <li>This might not be the best idea...</li>
+  </ul>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="jquery-ui-1.8.16.custom.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('#target')
+    .children()
+    .button()
+    .click(function() {
+        alert($(this).html());
+      });
+  
+});
+</script>
+</body>
+</html>

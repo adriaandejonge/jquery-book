@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>jQuery UI Droppable</title>
+  <style>
+  .ui-draggable {
+    border: 1px dashed black;
+  }
+  .ui-draggable-dragging {
+    border: 1px solid red;
+  }
+  #target { 
+    width: 400px;
+    height: 100px;
+    border: 2px solid black;
+  }
+  </style>
+</head>
+<body>
+
+<h2>Drag the span to the rectangle below</h2>
+
+<span>This is the SPAN</span>
+
+<div id="target">Drop the span in this rectangle</div>
+  
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="jquery-ui-1.8.16.custom.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('#target').droppable({drop: function() {
+    $(this).html('DROPPED!');
+  }, out: function() {
+    $(this).html('and gone again...');
+  }});
+
+  $('span').draggable();
+
+});
+</script>
+</body>
+</html>

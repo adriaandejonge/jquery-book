@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>jQuery UI Draggable</title>
+  <style>
+  .ui-draggable {
+    border: 1px dashed black;
+  }
+  .ui-draggable-dragging {
+    border: 1px solid red;
+  }
+  </style>
+</head>
+<body>
+
+<h2>Drag all elements around the screen</h2>
+<p>More text <b>with bold</b> followed by text</p>
+<h2>Another header</h2>
+<ul>
+  <li>And a list</li>
+  <li>With items</li>
+</ul>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="jquery-ui-1.8.16.custom.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('body *').draggable();
+
+});
+</script>
+</body>
+</html>

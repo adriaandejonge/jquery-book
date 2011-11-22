@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>jQuery UI Radio</title>
+  <link type="text/css" rel="stylesheet"
+   href="css/smoothness/jquery-ui-1.8.16.custom.css">  
+
+</head>
+<body>
+
+<div id="target">
+  <label for="first">First</label>
+  <input type="radio" name="my-radio" id="first"><br>
+  <label for="second">Second</label>
+  <input type="radio" name="my-radio" id="second"><br>
+  <label for="third">Third</label>
+  <input type="radio" name="my-radio" id="third"><br>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="jquery-ui-1.8.16.custom.min.js"></script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('#target')
+   
+    .buttonset();
+      
+});
+</script>
+</body>
+</html>
