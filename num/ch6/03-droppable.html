@@ -26,21 +26,22 @@
 25 <div id="target">Drop the span in this rectangle</div>
 26   
 27 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-28 <script src="jquery-ui-1.8.16.custom.min.js"></script>
-29 
-30 <script>
-31 // please externalize this code to an external .js file
-32 $(document).ready(function() {
-33   
-34   $('#target').droppable({drop: function() {
-35     $(this).html('DROPPED!');
-36   }, out: function() {
-37     $(this).html('and gone again...');
-38   }});
-39 
-40   $('span').draggable();
-41 
-42 });
-43 </script>
-44 </body>
-45 </html>
+28 <script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+29 </script>
+30 
+31 <script>
+32 // please externalize this code to an external .js file
+33 $(document).ready(function() {
+34   
+35   $('#target').droppable({drop: function() {
+36     $(this).html('DROPPED!');
+37   }, out: function() {
+38     $(this).html('and gone again...');
+39   }});
+40 
+41   $('span').draggable();
+42 
+43 });
+44 </script>
+45 </body>
+46 </html>

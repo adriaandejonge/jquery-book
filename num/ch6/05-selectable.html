@@ -29,21 +29,22 @@
 28 </ul>
 29 
 30 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-31 <script src="jquery-ui-1.8.16.custom.min.js"></script>
-32 
-33 <script>
-34 // please externalize this code to an external .js file
-35 $(document).ready(function() {
-36 
-37   $('ul#target').selectable({
-38     selected: function(event, ui) {
-39       console.log(event);
-40       console.log(ui);
-41       $(ui.selected).html('SELECTED');
-42     }
-43   });
-44 
-45 });
-46 </script>
-47 </body>
-48 </html>
+31 <script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+32 </script>
+33 
+34 <script>
+35 // please externalize this code to an external .js file
+36 $(document).ready(function() {
+37 
+38   $('ul#target').selectable({
+39     selected: function(event, ui) {
+40       console.log(event);
+41       console.log(ui);
+42       $(ui.selected).html('SELECTED');
+43     }
+44   });
+45 
+46 });
+47 </script>
+48 </body>
+49 </html>
