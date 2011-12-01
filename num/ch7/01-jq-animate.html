@@ -2,7 +2,7 @@
 01 
 02 <html lang="en">
 03 <head>
-04   <title>The jQuery animate function</title>
+04   <title>The jQuery animate() function</title>
 05   <style>
 06   #my-animate {
 07     border: 1px solid black;
@@ -29,15 +29,13 @@
 28 $(document).ready(function() {
 29 
 30   $('#my-animate').click(function() {
-31     //alert('ji');
-32     $(this).animate({height: '+=50'}, 500)
-33     .animate({ backgroundColor: 'black'}, 1000)
-34     .animate({left: '+=50', width: '+=100'}, 500)
-35     .animate({top: '+=25'}, 500);
-36     //alert('ji');
-37   });
-38 
-39 });
-40 </script>
-41 </body>
-42 </html>
+31     $(this).animate({height: '+=50'}, 500)
+32     .animate({ backgroundColor: 'black'}, 1000)
+33     .animate({left: '+=50', width: '+=100'}, 500)
+34     .animate({top: '+=25'}, 500);
+35   });
+36 
+37 });
+38 </script>
+39 </body>
+40 </html>

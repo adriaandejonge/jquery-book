@@ -2,15 +2,15 @@
 
 <html lang="en">
 <head>
-<title>The jQuery UI animate function</title>
+<title>The jQuery UI effect() function</title>
   <style>
     #my-animate {
       border: 1px solid black;
       width: 100px;
       height: 100px;
-      position: absolute;
-      left: 50px;
-      top: 100px;
+      position: relative;
+      left: 80px;
+      top: 80px;
     }
     </style>
 </head>
@@ -30,12 +30,23 @@ Click
 // please externalize this code to an external .js file
 $(document).ready(function() {
   
+  var effects = 'blind bounce clip drop explode fold highlight ' +
+    'puff pulsate scale shake size slide';
+
+  var recursiveEffects = function(effs) {
+    var eff = effs.pop();
+    $('#my-animate')
+      .html(eff)
+      .effect(eff, {}, 'slow', function() {
+        recursiveEffects(effs);
+      });    
+  };
+  
   $('#my-animate').click(function() {
-    $(this).effect('slide', {}, 'fast');
-    //list effects
+    recursiveEffects(effects.split(' ').reverse());
   });
   
 });
 </script>
-</body>https://images-na.ssl-images-amazon.com/images/G/01/author-central/splash/page1._V156423862_.png
+</body>
 </html>

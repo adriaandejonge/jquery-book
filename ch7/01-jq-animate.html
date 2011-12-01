@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>The jQuery animate function</title>
+  <title>The jQuery animate() function</title>
   <style>
   #my-animate {
     border: 1px solid black;
@@ -29,12 +29,10 @@ Click
 $(document).ready(function() {
 
   $('#my-animate').click(function() {
-    //alert('ji');
     $(this).animate({height: '+=50'}, 500)
     .animate({ backgroundColor: 'black'}, 1000)
     .animate({left: '+=50', width: '+=100'}, 500)
     .animate({top: '+=25'}, 500);
-    //alert('ji');
   });
 
 });

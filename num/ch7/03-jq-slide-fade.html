@@ -2,7 +2,7 @@
 01 
 02 <html lang="en">
 03 <head>
-04   <title>The jQuery anmiate function</title>
+04   <title>The jQuery animate() function</title>
 05   <style>
 06   #my-animate {
 07     border: 1px solid black;
@@ -29,16 +29,14 @@
 28 $(document).ready(function() {
 29 
 30   $('#my-animate').click(function() {
-31     //alert('ji');
-32     $(this).fadeOut(1000)
-33     .delay(500)
-34     .fadeIn(1000, 'swing')
-35     .slideUp(500)
-36     .slideDown(1000, 'swing');
-37     //alert('ji');
-38   });
-39 
-40 });
-41 </script>
-42 </body>
-43 </html>
+31     $(this).fadeOut(1000)
+32     .delay(500)
+33     .fadeIn(1000, 'swing')
+34     .slideUp(500)
+35     .slideDown(1000, 'swing');
+36   });
+37 
+38 });
+39 </script>
+40 </body>
+41 </html>
