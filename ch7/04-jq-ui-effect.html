@@ -35,7 +35,7 @@ $(document).ready(function() {
 
   var recursiveEffects = function(effs) {
     var eff = effs.pop();
-    $('#my-animate')
+    if(eff) $('#my-animate')
       .html(eff)
       .effect(eff, {}, 'slow', function() {
         recursiveEffects(effs);
