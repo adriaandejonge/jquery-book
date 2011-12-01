@@ -1,0 +1,59 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04 <title>The jQuery UI animate function</title>
+05   <style>
+06     .placeholder {
+07       width: 100px;
+08     }
+09     .col {
+10       margin: 50px 0px 50px 0px;
+11       padding: 0px;
+12       width: 1px;
+13       height: 100px;
+14       position: relative;
+15       float: left;
+16     }
+17     .point {
+18       margin: 0px;
+19       padding: 0px;
+20       border: 1px solid black;
+21       width: 1px;
+22       height: 1px;
+23       position: relative;
+24       float: left;
+25     }
+26     </style>
+27 </head>
+28 <body>
+29 
+30 <h2>Display All Easing Functions</h2>
+31 
+32 <div class="placeholder">
+33 </div>
+34 
+35 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+36 <script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+37 </script>
+38 
+39 <script>
+40 // please externalize this code to an external .js file
+41 $(document).ready(function() {
+42   
+43   $.each($.easing, function(index, value) {
+44     if(! /def|linear|jswing/.test(index)) {
+45     var current = $('.placeholder').append('<div>'+index+'</div>');
+46     
+47     for(var i = 0; i < 100; i++) {
+48       current.append('<div class="col">' +
+49       '<div class="point" style="top: '+
+50       (100 - value(0, i, 0, 100, 100)) +
+51       'px; left: '+ i + 'px ;"></div></div>');
+52     }}    
+53   });
+54   
+55 });
+56 </script>
+57 </body>
+58 </html>

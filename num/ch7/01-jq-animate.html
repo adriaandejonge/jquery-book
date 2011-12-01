@@ -1,0 +1,43 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04   <title>The jQuery animate function</title>
+05   <style>
+06   #my-animate {
+07     border: 1px solid black;
+08     width: 100px;
+09     height: 100px;
+10     position: absolute;
+11     left: 50px;
+12     top: 100px;
+13   }
+14   </style>
+15 </head>
+16 <body>
+17 
+18 <h2>Click the div below to animate it</h2>
+19 
+20 <div id="my-animate">
+21 Click
+22 </div>
+23 
+24 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+25 
+26 <script>
+27 // please externalize this code to an external .js file
+28 $(document).ready(function() {
+29 
+30   $('#my-animate').click(function() {
+31     //alert('ji');
+32     $(this).animate({height: '+=50'}, 500)
+33     .animate({ backgroundColor: 'black'}, 1000)
+34     .animate({left: '+=50', width: '+=100'}, 500)
+35     .animate({top: '+=25'}, 500);
+36     //alert('ji');
+37   });
+38 
+39 });
+40 </script>
+41 </body>
+42 </html>

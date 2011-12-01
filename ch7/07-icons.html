@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>The jQuery UI Icons</title>
+<link type="text/css" rel="stylesheet" href=
+  "http://code.jquery.com/ui/1.8.16/themes/base/jquery-ui.css">
+<style>
+  span {
+    float: left;
+  }
+</style>
+</head>
+<body>
+
+<h2>Display All Icons</h2>
+
+<div class="placeholder">
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+</script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  var icons = 'carat-1-n carat-1-ne carat-1-e carat-1-se ' + 
+    'carat-1-s carat-1-sw carat-1-w carat-1-nw carat-2-n-s ' +
+    'carat-2-e-w triangle-1-n triangle-1-neckgr triangle-1-e ' +
+    'triangle-1-seckgr triangle-1-s triangle-1-swckgr ' + 
+    'triangle-1-w triangle-1-nwckgr triangle-2-n-sckg ' +
+    'triangle-2-e-wckg arrow-1-n arrow-1-ne arrow-1-e arrow-1-se ' + 
+    'arrow-1-s arrow-1-sw arrow-1-w arrow-1-nw arrow-2-n-s ' +
+    'arrow-2-ne-swckgr arrow-2-e-w arrow-2-se-nwckgr ' + 
+    'arrowstop-1-nckgr arrowstop-1-eckgr arrowstop-1-sckgr ' + 
+    'arrowstop-1-wckgr arrowthick-1-nckg arrowthick-1-neck ' + 
+    'arrowthick-1-eckg arrowthick-1-seck arrowthick-1-sckg ' + 
+    'arrowthick-1-swck arrowthick-1-wckg arrowthick-1-nwck ' + 
+    'arrowthick-2-n-sc arrowthick-2-ne-sw arrowthick-2-e-wc ' + 
+    'arrowthick-2-se-nw b arrowthickstop-1-n arrowthickstop-1-e ' + 
+    'arrowthickstop-1-s arrowthickstop-1-w arrowreturnthick-1-w ' + 
+    'arrowreturnthick-1-n arrowreturnthick-1-e ' + 
+    'arrowreturnthick-1-s arrowreturn-1-wck arrowreturn-1-nck ' + 
+    'arrowreturn-1-eck arrowreturn-1-sck arrowrefresh-1-wc ' + 
+    'arrowrefresh-1-nc arrowrefresh-1-ec arrowrefresh-1-sc ' + 
+    'arrow-4p arrow-4-diag extlinkp newwin refreshp shufflep ' + 
+    'transfer-e-w transferthick-e-w folder-collapsedc ' + 
+    'folder-open document document-b notesi mail-closed ' + 
+    'mail-open suitcase commentp person prints trashs locked ' + 
+    'unlocked bookmark tagsit homesi flagsi calendar cartsi ' + 
+    'pencil clocks disksi calculator zoomin zoomoutp search ' + 
+    'wrench gearsi hearts starsi linksi cancel plussi plusthick ' + 
+    'minuss minusthick closes closethick keysit lightbulb ' + 
+    'scissors clipboard copysi contactp images videos script ' + 
+    'alerts infosi notice helpsi checks bullet radio-on ' + 
+    'radio-off pin-ws pin-ss playsi pauses seek-next ' + 
+    'seek-prev seek-end seek-start seek-first stopsi ' + 
+    'ejects volume-off volume-on powers signal-diag signal ' + 
+    'battery-0 battery-1 battery-2 battery-3 circle-plus ' + 
+    'circle-minus circle-close circle-triangle-e ' + 
+    'circle-triangle-s circle-triangle-w circle-triangle-n ' + 
+    'circle-arrow-eckg circle-arrow-sckg circle-arrow-wckg ' + 
+    'circle-arrow-nckg circle-zoominckgr circle-zoomoutckg ' + 
+    'circle-check circlesmall-plusc circlesmall-minus ' + 
+    'circlesmall-close squaresmall-plusc squaresmall-minus ' + 
+    'squaresmall-close grip-dotted-vertical ' + 
+    'grip-dotted-horizontal grip-solid-vertical  ' + 
+    'grip-solid-horizontal  gripsmall-diagonal-se  ' + 
+    'grip-diagonal-sec';
+
+  $.each(icons.split(' '), function(index, value) {
+      $('.placeholder').append('<br>' + 
+        '<span class="ui-icon ui-icon-'+ value +'"></span>' + 
+        '<span>ui-icon-' + value +'</span><br>');
+  });
+  
+});
+</script>
+</body>
+</html>

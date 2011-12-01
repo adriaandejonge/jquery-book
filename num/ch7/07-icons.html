@@ -1,0 +1,82 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04 <title>The jQuery UI Icons</title>
+05 <link type="text/css" rel="stylesheet" href=
+06   "http://code.jquery.com/ui/1.8.16/themes/base/jquery-ui.css">
+07 <style>
+08   span {
+09     float: left;
+10   }
+11 </style>
+12 </head>
+13 <body>
+14 
+15 <h2>Display All Icons</h2>
+16 
+17 <div class="placeholder">
+18 </div>
+19 
+20 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+21 <script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+22 </script>
+23 
+24 <script>
+25 // please externalize this code to an external .js file
+26 $(document).ready(function() {
+27 
+28   var icons = 'carat-1-n carat-1-ne carat-1-e carat-1-se ' + 
+29     'carat-1-s carat-1-sw carat-1-w carat-1-nw carat-2-n-s ' +
+30     'carat-2-e-w triangle-1-n triangle-1-neckgr triangle-1-e ' +
+31     'triangle-1-seckgr triangle-1-s triangle-1-swckgr ' + 
+32     'triangle-1-w triangle-1-nwckgr triangle-2-n-sckg ' +
+33     'triangle-2-e-wckg arrow-1-n arrow-1-ne arrow-1-e arrow-1-se ' + 
+34     'arrow-1-s arrow-1-sw arrow-1-w arrow-1-nw arrow-2-n-s ' +
+35     'arrow-2-ne-swckgr arrow-2-e-w arrow-2-se-nwckgr ' + 
+36     'arrowstop-1-nckgr arrowstop-1-eckgr arrowstop-1-sckgr ' + 
+37     'arrowstop-1-wckgr arrowthick-1-nckg arrowthick-1-neck ' + 
+38     'arrowthick-1-eckg arrowthick-1-seck arrowthick-1-sckg ' + 
+39     'arrowthick-1-swck arrowthick-1-wckg arrowthick-1-nwck ' + 
+40     'arrowthick-2-n-sc arrowthick-2-ne-sw arrowthick-2-e-wc ' + 
+41     'arrowthick-2-se-nw b arrowthickstop-1-n arrowthickstop-1-e ' + 
+42     'arrowthickstop-1-s arrowthickstop-1-w arrowreturnthick-1-w ' + 
+43     'arrowreturnthick-1-n arrowreturnthick-1-e ' + 
+44     'arrowreturnthick-1-s arrowreturn-1-wck arrowreturn-1-nck ' + 
+45     'arrowreturn-1-eck arrowreturn-1-sck arrowrefresh-1-wc ' + 
+46     'arrowrefresh-1-nc arrowrefresh-1-ec arrowrefresh-1-sc ' + 
+47     'arrow-4p arrow-4-diag extlinkp newwin refreshp shufflep ' + 
+48     'transfer-e-w transferthick-e-w folder-collapsedc ' + 
+49     'folder-open document document-b notesi mail-closed ' + 
+50     'mail-open suitcase commentp person prints trashs locked ' + 
+51     'unlocked bookmark tagsit homesi flagsi calendar cartsi ' + 
+52     'pencil clocks disksi calculator zoomin zoomoutp search ' + 
+53     'wrench gearsi hearts starsi linksi cancel plussi plusthick ' + 
+54     'minuss minusthick closes closethick keysit lightbulb ' + 
+55     'scissors clipboard copysi contactp images videos script ' + 
+56     'alerts infosi notice helpsi checks bullet radio-on ' + 
+57     'radio-off pin-ws pin-ss playsi pauses seek-next ' + 
+58     'seek-prev seek-end seek-start seek-first stopsi ' + 
+59     'ejects volume-off volume-on powers signal-diag signal ' + 
+60     'battery-0 battery-1 battery-2 battery-3 circle-plus ' + 
+61     'circle-minus circle-close circle-triangle-e ' + 
+62     'circle-triangle-s circle-triangle-w circle-triangle-n ' + 
+63     'circle-arrow-eckg circle-arrow-sckg circle-arrow-wckg ' + 
+64     'circle-arrow-nckg circle-zoominckgr circle-zoomoutckg ' + 
+65     'circle-check circlesmall-plusc circlesmall-minus ' + 
+66     'circlesmall-close squaresmall-plusc squaresmall-minus ' + 
+67     'squaresmall-close grip-dotted-vertical ' + 
+68     'grip-dotted-horizontal grip-solid-vertical  ' + 
+69     'grip-solid-horizontal  gripsmall-diagonal-se  ' + 
+70     'grip-diagonal-sec';
+71 
+72   $.each(icons.split(' '), function(index, value) {
+73       $('.placeholder').append('<br>' + 
+74         '<span class="ui-icon ui-icon-'+ value +'"></span>' + 
+75         '<span>ui-icon-' + value +'</span><br>');
+76   });
+77   
+78 });
+79 </script>
+80 </body>
+81 </html>

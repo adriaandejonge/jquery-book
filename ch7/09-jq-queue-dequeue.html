@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>The jQuery UI promise() and stop() functions</title>
+<style>
+  .my-animate {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+  }
+  .my-toggle {
+    background-color: yellow;
+  }
+  </style></head>
+<body>
+
+<h2>Click the div below to animate it</h2>
+
+<div class="my-animate">
+Click
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+</script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('.my-animate').click(function() {
+    $(this)
+      .toggleClass('my-toggle', 'fast')
+      .queue(function() {
+        $(this).html('Queue... And then dequeue, otherwise ' +
+          'the animation will not continue');
+        $(this).dequeue();        
+      })
+      .toggleClass('my-toggle', 'fast')
+      .queue(function() {
+        $(this).html('This is what you get when you forget '
+          + 'to dequeue...');
+        // forget $(this).dequeue(); on purpose
+      })
+      .toggleClass('my-toggle', 'fast')
+      .promise().done(function() {
+      $(this).html('This function will never be called because ' +
+       'the second queued function does NOT dequeue...');
+    });
+  });
+  
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>The jQuery UI animate function</title>
+  <style>
+    #my-animate {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 50px;
+      top: 100px;
+    }
+    </style>
+</head>
+<body>
+
+<h2>Click the div below to animate it</h2>
+
+<div id="my-animate">
+Click
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+</script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('#my-animate').click(function() {
+    $(this).effect('slide', {}, 'fast');
+    //list effects
+  });
+  
+});
+</script>
+</body>https://images-na.ssl-images-amazon.com/images/G/01/author-central/splash/page1._V156423862_.png
+</html>

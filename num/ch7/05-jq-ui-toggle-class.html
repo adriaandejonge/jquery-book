@@ -1,0 +1,61 @@
+00 <!DOCTYPE html>
+01 
+02 <html lang="en">
+03 <head>
+04 <title>The jQuery UI Toggle Class</title>
+05   <style>
+06     .my-animate {
+07       border: 1px solid black;
+08       width: 100px;
+09       height: 100px;
+10     }
+11     .my-toggle {
+12       border: 50px dashed red;
+13       width: 200px;
+14       height: 400px;
+15       font-size: 50px;
+16       padding: 50px;
+17     }
+18     .my-add {
+19       border-radius: 100px;
+20       -moz-border-radius: 100px;
+21     }
+22     .my-switch {
+23       background-color: yellow;
+24     }    
+25     </style>
+26 </head>
+27 <body>
+28 
+29 <h2>Click the div below to animate it</h2>
+30 
+31 <button>Toggle fx</button>
+32 
+33 <div class="my-animate">
+34 Click
+35 </div>
+36 
+37 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+38 <script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+39 </script>
+40 
+41 <script>
+42 // please externalize this code to an external .js file
+43 $(document).ready(function() {
+44   
+45   $('.my-animate').click(function() {
+46     $(this).toggleClass('my-toggle', 2000)
+47       .addClass('my-add', 2000)
+48       .removeClass('my-toggle', 2000)
+49       .switchClass('my-add', 'my-switch', 2000);
+50   });
+51   
+52   $('button').click(function() {
+53     $.fx.off = !$.fx.off;
+54     $.fx.interval = 500;
+55   });
+56    
+57 });
+58 </script>
+59 </body>
+60 </html>

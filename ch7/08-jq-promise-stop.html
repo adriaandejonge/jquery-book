@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>The jQuery UI promise() and stop() functions</title>
+  <style>
+    #my-animate {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+    </style>
+</head>
+<body>
+
+<h2>Click the div below to animate it</h2>
+
+<div id="my-animate">
+Click
+</div>
+
+<button>Stop</button>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+</script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('#my-animate').click(function() {
+    $(this).effect('slide', {}, 5000);
+    $(this).promise().done(function() {
+      alert('animation is done');
+    });
+  });
+  
+  $('button').click(function() {
+    $('#my-animate').stop();
+  });
+  
+});
+</script>
+</body>
+</html>

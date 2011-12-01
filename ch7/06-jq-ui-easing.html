@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>The jQuery UI animate function</title>
+  <style>
+    .placeholder {
+      width: 100px;
+    }
+    .col {
+      margin: 50px 0px 50px 0px;
+      padding: 0px;
+      width: 1px;
+      height: 100px;
+      position: relative;
+      float: left;
+    }
+    .point {
+      margin: 0px;
+      padding: 0px;
+      border: 1px solid black;
+      width: 1px;
+      height: 1px;
+      position: relative;
+      float: left;
+    }
+    </style>
+</head>
+<body>
+
+<h2>Display All Easing Functions</h2>
+
+<div class="placeholder">
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+</script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $.each($.easing, function(index, value) {
+    if(! /def|linear|jswing/.test(index)) {
+    var current = $('.placeholder').append('<div>'+index+'</div>');
+    
+    for(var i = 0; i < 100; i++) {
+      current.append('<div class="col">' +
+      '<div class="point" style="top: '+
+      (100 - value(0, i, 0, 100, 100)) +
+      'px; left: '+ i + 'px ;"></div></div>');
+    }}    
+  });
+  
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>The jQuery UI Toggle Class</title>
+  <style>
+    .my-animate {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+    .my-toggle {
+      border: 50px dashed red;
+      width: 200px;
+      height: 400px;
+      font-size: 50px;
+      padding: 50px;
+    }
+    .my-add {
+      border-radius: 100px;
+      -moz-border-radius: 100px;
+    }
+    .my-switch {
+      background-color: yellow;
+    }    
+    </style>
+</head>
+<body>
+
+<h2>Click the div below to animate it</h2>
+
+<button>Toggle fx</button>
+
+<div class="my-animate">
+Click
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
+</script>
+
+<script>
+// please externalize this code to an external .js file
+$(document).ready(function() {
+  
+  $('.my-animate').click(function() {
+    $(this).toggleClass('my-toggle', 2000)
+      .addClass('my-add', 2000)
+      .removeClass('my-toggle', 2000)
+      .switchClass('my-add', 'my-switch', 2000);
+  });
+  
+  $('button').click(function() {
+    $.fx.off = !$.fx.off;
+    $.fx.interval = 500;
+  });
+   
+});
+</script>
+</body>
+</html>
