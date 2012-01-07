@@ -1,0 +1,53 @@
+00 <!DOCTYPE html> 
+01 <html> 
+02 	<head> 
+03 	  <title>My Original Page</title> 
+04   	<meta name="viewport" 
+05   	  content="width=device-width, initial-scale=1"> 
+06   	<link rel="stylesheet" href=
+07   	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+08 	  <script type="text/javascript"
+09       src="http://code.jquery.com/jquery-1.7.1.min.js">
+10     </script>
+11     <script type="text/javascript" src=
+12       "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+13     </script>
+14   <script>
+15   $(document).ready(function() {
+16     alert('A page with an ID of "aboutPage" was just created by jQuery Mobile!');
+17   //});
+18   
+19   $.each(('tap taphold swipe swipeleft swiperight orientationchange scrollstart scrollstop pageshow pagehide').split(' '),
+20    function( i, name ) {
+21 
+22   $(document).on(name, function(event) {
+23     $('#status').append('target = ' + event.target + ' ' +
+24               'type = ' + event.type + ' ' +
+25               'pageX = ' + event.pageX + ' ' +
+26               'pageY = ' + event.pageY + ' ' +
+27               'which = ' + event.which + ' <br>');
+28     });
+29   });
+30   });
+31   </script>
+32 
+33 </head> 
+34 <body> 
+35 
+36 <div data-role="page">
+37 
+38 	<div data-role="header">
+39 		<h1>Original</h1>
+40 	</div>
+41 
+42 	<div data-role="content">	
+43 		<p><a href="04b-link.html">Link to an external file</a></p>	
+44   	<p><a href="04b-link.html" data-prefetch>Prefetch the
+45   	  external file</a></p>
+46   <p id="status">
+47 	</div>
+48 	
+49 </div>
+50 
+51 </body>
+52 </html>

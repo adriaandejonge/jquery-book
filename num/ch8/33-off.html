@@ -1,0 +1,63 @@
+00 <!DOCTYPE html> 
+01 <html> 
+02 	<head> 
+03 	  <title>My Original Page</title> 
+04   	<meta name="viewport" 
+05   	  content="width=device-width, initial-scale=1"> 
+06   	<link rel="stylesheet" href=
+07   	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+08 	  <script type="text/javascript"
+09       src="http://code.jquery.com/jquery-1.7.1.min.js">
+10     </script>
+11     <script type="text/javascript" src=
+12       "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+13     </script>
+14 
+15 </head> 
+16 <body> 
+17 
+18 <div data-role="page">
+19 
+20 	<div data-role="header">
+21 		<h1>Layouts</h1>
+22 	</div>
+23 
+24 	<div data-role="content">	
+25 	  
+26 	  <form action="" method="post" data-ajax="false">
+27 	    
+28 	    <h2>Basics</h2>
+29 	    <div data-role="fieldcontain">
+30   	    <label for="myinput">Input</label>
+31   	    <input type="text" id="myinput" data-role="none">
+32 	    </div>
+33 	    <div data-role="fieldcontain">
+34         <label for="myselect">Select</label>
+35         <select data-role="none">
+36           <option value="1">First</option>
+37           <option value="2">Second</option>
+38           <option value="3">Third</option>
+39         </select>
+40       </div>
+41 	    <fieldset data-role="controlgroup">
+42       	
+43       	<legend>Select from Checkbox:</legend>
+44 
+45        	<input type="checkbox" name="mycheck" id="mycheck1"
+46        	  value="1" checked="checked" data-role="none">
+47        	<label for="mycheck1">First</label>
+48 
+49        	<input type="checkbox" name="mycheck" id="mycheck2"
+50        	  value="2" data-role="none">
+51        	<label for="mycheck2">Second</label>
+52 
+53        	<input type="checkbox" name="mycheck" id="mycheck3"
+54        	  value="3" data-role="none">
+55        	<label for="mycheck3">Third</label>
+56 
+57       </fieldset>
+58 	  </form>
+59   </div>
+60 
+61 </body>
+62 </html>

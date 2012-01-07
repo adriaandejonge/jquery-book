@@ -1,0 +1,52 @@
+00 <!DOCTYPE html> 
+01 <html> 
+02 	<head> 
+03 	  <title>My Original Page</title> 
+04   	<meta name="viewport" 
+05   	  content="width=device-width, initial-scale=1"> 
+06   	<link rel="stylesheet" href=
+07   	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+08 	  <script type="text/javascript"
+09       src="http://code.jquery.com/jquery-1.7.1.min.js">
+10     </script>
+11     <script type="text/javascript" src=
+12       "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+13     </script>
+14     <script>
+15     $(document).ready(function() {
+16       
+17       $('#setdata').on('click', function(event) {
+18         $('#mydata').jqmData('mykey', 'myvalue');
+19       });
+20       $('#getdata').on('click', function(event) {
+21         alert($('#mydata').jqmData('mykey'));
+22       });
+23       $('#removedata').on('click', function(event) {
+24         $('#mydata').jqmRemoveData('mykey');
+25       });
+26       $('#select').on('click', function(event) {
+27         alert('Number of buttons = ' +
+28           $('a:jqmData(role="button")').length);
+29       });
+30     
+31     });
+32     </script>
+33 </head> 
+34 <body> 
+35 
+36 <div data-role="page">
+37 
+38 	<div data-role="header">
+39 		<h1>Change page</h1>
+40 	</div>
+41 
+42 	<div data-role="content">	
+43 	  <p id="mydata">This paragraph serves as the data container.</p>
+44 	  <a href="#" id="setdata" data-role="button">Set Data</a>
+45     <a href="#" id="getdata" data-role="button">Get Data</a>
+46     <a href="#" id="removedata" data-role="button">Remove Data</a>
+47     <a href="#" id="select" data-role="button">Select</a>
+48   </div>
+49 
+50 </body>
+51 </html>

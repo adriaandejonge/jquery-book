@@ -1,0 +1,104 @@
+00 <!DOCTYPE html> 
+01 <html> 
+02 	<head> 
+03   	<title>My Original Page</title> 
+04   	<meta name="viewport" 
+05   	  content="width=device-width, initial-scale=1"> 
+06   	<link rel="stylesheet" href=
+07   	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+08 	  <script type="text/javascript"
+09       src="http://code.jquery.com/jquery-1.7.1.min.js">
+10     </script>
+11     <script type="text/javascript" src=
+12       "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+13     </script>
+14     <script>
+15     $(document).ready(function() {
+16                 
+17       $('#parse').on('click', function() {
+18         
+19         var url = 'http://user:password@www.pearsonhighered.com' +
+20                   ':80/educator/series/Developers-Library' +
+21                   '/10483.page?key=value#first-id';
+22 
+23         var parsedUrl = 
+24           JSON.stringify(
+25             $.mobile.path.parseUrl(url)
+26           )
+27           .replace(/,/g, ',<br>');
+28         $('#output').html(parsedUrl);
+29       });
+30       $('#absolutepath').on('click', function() {
+31           
+32         $('#output').html(
+33           $.mobile.path.makePathAbsolute(
+34             'newfile.html',
+35             '/root/path/oldfile.html'
+36           )
+37         );                  
+38       });
+39       $('#absoluteurl').on('click', function() {
+40           
+41         $('#output').html(
+42           $.mobile.path.makeUrlAbsolute(
+43             'newfile.html',
+44             'http://www.domain.com/root/path/oldfile.html'
+45           )
+46         );                  
+47       });
+48       $('#isabsolute').on('click', function() {
+49           
+50         $('#output').html('isAbsoluteUrl=' +
+51           $.mobile.path.isAbsoluteUrl(
+52             'http://www.domain.com/root/path/oldfile.html'
+53           )
+54         );                  
+55       });
+56       $('#isrelative').on('click', function() {
+57           
+58         $('#output').html('isRelativeUrl=' +
+59           $.mobile.path.isRelativeUrl(
+60             'http://www.domain.com/root/path/oldfile.html'
+61           )
+62         );                  
+63       });
+64       $('#samedomain').on('click', function() {
+65           
+66         $('#output').html('isSameDomain=' +
+67           $.mobile.path.isSameDomain(
+68             'http://www.domain.com/root/path/oldfile.html',
+69             'http://www.domain.com/root/path/newfile.html'
+70           )
+71         );                  
+72       });
+73     });
+74     </script>
+75   </head> 
+76 <body> 
+77 
+78 <div data-role="page">
+79 
+80 	<div data-role="header">
+81     	<h1>Show/Hide Loading Message</h1>
+82 	</div>
+83 
+84 	<div data-role="content">	
+85 	  <a href="#" id="parse" data-role="button">Parse URL</a>
+86 	  <a href="#" id="absolutepath" data-role="button">Make Path
+87 	    Absolute</a>
+88 	  <a href="#" id="absoluteurl" data-role="button">Make URL
+89 	    Absolute</a>
+90     <a href="#" id="isabsolute" data-role="button">Is Absolute
+91       Url</a>
+92      <a href="#" id="isrelative" data-role="button">Is Relative
+93       Url</a>
+94     <a href="#" id="samedomain" data-role="button">Is Same 
+95       Domain</a>
+96       
+97 	  <p id="output">Placeholder for the output</p>
+98 	</div>
+99 	
+100 </div>
+101 
+102 </body>
+103 </html>

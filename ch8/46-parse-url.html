@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+  	<title>My Original Page</title> 
+  	<meta name="viewport" 
+  	  content="width=device-width, initial-scale=1"> 
+  	<link rel="stylesheet" href=
+  	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+	  <script type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.1.min.js">
+    </script>
+    <script type="text/javascript" src=
+      "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+    </script>
+    <script>
+    $(document).ready(function() {
+                
+      $('#parse').on('click', function() {
+        
+        var url = 'http://user:password@www.pearsonhighered.com' +
+                  ':80/educator/series/Developers-Library' +
+                  '/10483.page?key=value#first-id';
+
+        var parsedUrl = 
+          JSON.stringify(
+            $.mobile.path.parseUrl(url)
+          )
+          .replace(/,/g, ',<br>');
+        $('#output').html(parsedUrl);
+      });
+      $('#absolutepath').on('click', function() {
+          
+        $('#output').html(
+          $.mobile.path.makePathAbsolute(
+            'newfile.html',
+            '/root/path/oldfile.html'
+          )
+        );                  
+      });
+      $('#absoluteurl').on('click', function() {
+          
+        $('#output').html(
+          $.mobile.path.makeUrlAbsolute(
+            'newfile.html',
+            'http://www.domain.com/root/path/oldfile.html'
+          )
+        );                  
+      });
+      $('#isabsolute').on('click', function() {
+          
+        $('#output').html('isAbsoluteUrl=' +
+          $.mobile.path.isAbsoluteUrl(
+            'http://www.domain.com/root/path/oldfile.html'
+          )
+        );                  
+      });
+      $('#isrelative').on('click', function() {
+          
+        $('#output').html('isRelativeUrl=' +
+          $.mobile.path.isRelativeUrl(
+            'http://www.domain.com/root/path/oldfile.html'
+          )
+        );                  
+      });
+      $('#samedomain').on('click', function() {
+          
+        $('#output').html('isSameDomain=' +
+          $.mobile.path.isSameDomain(
+            'http://www.domain.com/root/path/oldfile.html',
+            'http://www.domain.com/root/path/newfile.html'
+          )
+        );                  
+      });
+    });
+    </script>
+  </head> 
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+    	<h1>Show/Hide Loading Message</h1>
+	</div>
+
+	<div data-role="content">	
+	  <a href="#" id="parse" data-role="button">Parse URL</a>
+	  <a href="#" id="absolutepath" data-role="button">Make Path
+	    Absolute</a>
+	  <a href="#" id="absoluteurl" data-role="button">Make URL
+	    Absolute</a>
+    <a href="#" id="isabsolute" data-role="button">Is Absolute
+      Url</a>
+     <a href="#" id="isrelative" data-role="button">Is Relative
+      Url</a>
+    <a href="#" id="samedomain" data-role="button">Is Same 
+      Domain</a>
+      
+	  <p id="output">Placeholder for the output</p>
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+  	<title>My Original Page</title> 
+  	<meta name="viewport" 
+  	  content="width=device-width, initial-scale=1"> 
+  	<link rel="stylesheet" href=
+  	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+	  <script type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.1.min.js">
+    </script>
+    <script type="text/javascript" src=
+      "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+    </script>
+    <script>
+    $(document).ready(function() {
+      $('#show').on('click', function() {
+        $.mobile.showPageLoadingMsg();
+      });
+      $('#hide').on('click', function() {
+        $.mobile.hidePageLoadingMsg();
+      });
+    });
+    </script>
+  </head> 
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+    	<h1>Show/Hide Loading Message</h1>
+	</div>
+
+	<div data-role="content">	
+	  <a href="#" id="show" data-role="button">Show Loading
+	     Message</a>
+		<a href="#" id="hide" data-role="button">Hide Loading 
+		  Message</a>
+	</div>
+	
+</div>
+
+</body>
+</html>

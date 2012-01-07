@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title  >My Page</title> 
+  	<meta name="viewport" 
+  	  content="width=device-width, initial-scale=1"> 
+  	<link rel="stylesheet" href=
+  	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+	  <script type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.1.min.js">
+    </script>
+    <script type="text/javascript" src=
+      "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+    </script>
+  </head> 
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>First</h1>
+	</div>
+
+	<div data-role="content">	
+		<p>Hello world <a href="#second" data-transition="pop">and go
+		   to the second</a></p>		
+		   <!-- or slide, slipdeup, slidedown, fade or flip 
+		   (support for flip is limited on Android) -->
+	</div>
+	
+</div>
+
+<div data-role="page" id="second">
+
+  <div data-role="header">
+		<h1>Second</h1>
+	</div>
+ <div data-role="content">
+   Goodbye, World!
+ </div>
+
+</div>
+
+</body>
+</html>
