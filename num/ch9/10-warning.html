@@ -1,0 +1,43 @@
+00 <!DOCTYPE html> 
+01 <html> 
+02   <head> 
+03     <title>Warning</title> 
+04     <meta name="viewport" 
+05       content="width=device-width, initial-scale=1"> 
+06     <link rel="stylesheet" href=
+07       "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+08     <script type="text/javascript"
+09       src="http://code.jquery.com/jquery-1.7.1.min.js">
+10     </script>
+11     <script type="text/javascript" src=
+12       "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+13     </script>
+14 <script>
+15 $(document).ready(function() {
+16   $('#delete').on('click', function() {
+17     $(this).parent().detach();
+18   });
+19 });
+20 </script>
+21 </head> 
+22 <body> 
+23 
+24 <div data-role="page">
+25   <div data-theme="e" data-role="header">
+26     <h3>Warning: you can click this away</h3>
+27     <a href="#" data-role="button" data-icon="delete"
+28       data-iconpos="notext" class="ui-btn-right"
+29       id="delete">Delete</a>
+30   </div>
+31   <div data-role="header">
+32     <h1>Page with Warning</h1>
+33   </div>
+34 
+35   <div data-role="content">  
+36         <p>Content</p>
+37   </div>
+38   
+39 </div>
+40 
+41 </body>
+42 </html>

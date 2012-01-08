@@ -1,12 +1,12 @@
 <!DOCTYPE html> 
 <html> 
-	<head> 
-	  <title>My Original Page</title> 
-  	<meta name="viewport" 
-  	  content="width=device-width, initial-scale=1"> 
-  	<link rel="stylesheet" href=
-  	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
-	  <script type="text/javascript"
+  <head> 
+    <title>Events</title> 
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href=
+      "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+    <script type="text/javascript"
       src="http://code.jquery.com/jquery-1.7.1.min.js">
     </script>
     <script type="text/javascript" src=
@@ -14,20 +14,17 @@
     </script>
   <script>
   $(document).ready(function() {
-    alert('A page with an ID of "aboutPage" was just created by jQuery Mobile!');
-  //});
-  
-  $.each(('tap taphold swipe swipeleft swiperight orientationchange scrollstart scrollstop pageshow pagehide').split(' '),
-   function( i, name ) {
 
-  $(document).on(name, function(event) {
-    $('#status').append('target = ' + event.target + ' ' +
-              'type = ' + event.type + ' ' +
-              'pageX = ' + event.pageX + ' ' +
-              'pageY = ' + event.pageY + ' ' +
-              'which = ' + event.which + ' <br>');
+  $.each(('tap taphold swipe swipeleft swiperight ' +
+    'orientationchange scrollstart scrollstop pageshow ' +
+    'pagehide').split(' '),
+     function( i, name ) {
+
+    $(document).on(name, function(event) {
+      $('#status').append('target = ' + event.target + ' ' +
+                          'type = ' + event.type + ' <br>');
+      });
     });
-  });
   });
   </script>
 
@@ -36,17 +33,17 @@
 
 <div data-role="page">
 
-	<div data-role="header">
-		<h1>Original</h1>
-	</div>
+  <div data-role="header">
+    <h1>Events</h1>
+  </div>
 
-	<div data-role="content">	
-		<p><a href="04b-link.html">Link to an external file</a></p>	
-  	<p><a href="04b-link.html" data-prefetch>Prefetch the
-  	  external file</a></p>
+  <div data-role="content">  
+    <p><a href="04b-link.html">Link to an external file</a></p>  
+    <p><a href="04b-link.html" data-prefetch>Prefetch the
+      external file</a></p>
   <p id="status">
-	</div>
-	
+  </div>
+  
 </div>
 
 </body>

@@ -1,30 +1,30 @@
 00 <!DOCTYPE html> 
 01 <html> 
-02 	<head> 
-03 	  <title>My Page</title> 
-04   	<meta name="viewport" 
-05   	  content="width=device-width, initial-scale=1"> 
-06   	<link rel="stylesheet" href=
-07   	  "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
-08   	<style>
-09   	.mine.in {
-10     	    -webkit-animation-name: myslidein;
-11     	}
+02   <head> 
+03     <title>Custom Transition</title> 
+04     <meta name="viewport" 
+05       content="width=device-width, initial-scale=1"> 
+06     <link rel="stylesheet" href=
+07       "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+08     <style>
+09     .mine.in {
+10           -webkit-animation-name: myslidein;
+11       }
 12 
-13     	.mine.out {
-14     	    -webkit-animation-name: myslideout;
-15     	}
+13       .mine.out {
+14           -webkit-animation-name: myslideout;
+15       }
 16 
-17     	@-webkit-keyframes myslidein {
-18     	    from { -webkit-transform:   rotateZ(0deg) scale(0);}
-19     	    to { -webkit-transform:   rotateZ(360deg) scale(1); }
-20     	}
-21     	@-webkit-keyframes myslideout {
-22     	    from { -webkit-transform:  rotateZ(360deg) scale(1); }
-23     	    to { -webkit-transform:  rotateZ(0deg) scale(0); }
-24     	}
-25   	</style>
-26   	<script type="text/javascript"
+17       @-webkit-keyframes myslidein {
+18           from { -webkit-transform:   rotateZ(0deg) scale(0);}
+19           to { -webkit-transform:   rotateZ(360deg) scale(1); }
+20       }
+21       @-webkit-keyframes myslideout {
+22           from { -webkit-transform:  rotateZ(360deg) scale(1); }
+23           to { -webkit-transform:  rotateZ(0deg) scale(0); }
+24       }
+25     </style>
+26     <script type="text/javascript"
 27       src="http://code.jquery.com/jquery-1.7.1.min.js">
 28     </script>
 29     <script type="text/javascript" src=
@@ -35,26 +35,26 @@
 34 
 35 <div data-role="page">
 36 
-37 	<div data-role="header">
-38 		<h1>First</h1>
-39 	</div>
+37   <div data-role="header">
+38     <h1>First</h1>
+39   </div>
 40 
-41 	<div data-role="content">	
-42 		<p>Hello world <a href="#second" data-transition="mine">and go
-43 		   to the second</a></p>		
-44 		   <!-- or slide, slipdeup, slidedown, fade or flip 
-45 		   (support for flip is limited on Android) -->
-46 	</div>
-47 	
+41   <div data-role="content">  
+42     <p>Hello world <a href="#second" data-transition="mine">and go
+43        to the second</a></p>    
+44        <!-- or slide, slipdeup, slidedown, fade or flip 
+45        (support for flip is limited on Android) -->
+46   </div>
+47   
 48 </div>
 49 
 50 <div data-role="page" id="second">
 51 
 52   <div data-role="header">
-53 		<h1>Second</h1>
-54 	</div>
+53     <h1>Second</h1>
+54   </div>
 55  <div data-role="content">
-56  Goodbye, World!
+56    Hello again!
 57  </div>
 58 
 59 </div>

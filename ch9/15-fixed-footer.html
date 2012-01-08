@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Fixed Footer</title> 
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href=
+      "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+    <script type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.1.min.js">
+    </script>
+    <script type="text/javascript" src=
+      "http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js">
+    </script>
+
+</head> 
+<body> 
+  <div data-role="page">
+
+    <div data-role="header">
+      <h1>First</h1>
+    </div>
+
+    <div data-role="content">  
+      <p>Go to the <a href="#second">second page</a></p>    
+    </div>
+
+    <div data-role="footer" data-id="myfooter" data-position="fixed">
+      <p>First page</p>
+    </div>
+     
+  </div>
+<div data-role="page" data-add-back-btn="true" id="second">
+
+  <div data-role="header">
+    <h1>Second</h1>
+  </div>
+
+  <div data-role="content">  
+      <p>Content</p>
+      <p>More text</p>
+       
+  </div>
+  <div data-role="footer" data-id="myfooter" data-position="fixed">
+      <p>Second page</p>
+  </div>
+  
+</div>
+
+</body>
+</html>
