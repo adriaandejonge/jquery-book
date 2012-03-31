@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The timeout property</title>
+</head>
+<body>
+
+<h2>Add some text below the paragraphs after a while</h2>
+
+<p>First paragraph to select</p>
+
+<p>Second paragraph to select</p>
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<script>
+(function( $ ){
+
+  $.fn.testCallbacks = function() {
+    
+   var hello = function(to) {
+     this.append('<br>hello ' + to);
+   }
+   var bye = function(to) {
+     this.append('<br>bye ' + to);
+    }
+  
+   var callbacks = $.Callbacks();
+   window.setTimeout(callbacks.fireWith, 3000, this, ['world']);
+   callbacks.add(hello);
+   callbacks.add(bye);
+   //callbacks.lock();
+
+  };
+})( jQuery );
+
+
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('p').testCallbacks();
+
+});
+</script>
+</body>
+</html>

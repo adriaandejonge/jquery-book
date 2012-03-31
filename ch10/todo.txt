@@ -1,0 +1,20 @@
+plugins:
+sub()
+
+jquery.error()
+
+jquery.noop()
+
+RequireJS - CommonsJS, see jQuery 1.7 beta 2
+
+custom events
+
+elaborate explanation of Deferred
+
+Callbacks (new in Jq 1.7)
+
+jQ UI - Widget (framework for creating widgets)
+
+$.extend(
+
+$.extend($.easing, custom function

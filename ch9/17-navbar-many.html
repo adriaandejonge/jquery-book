@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
   <head> 
-    <title>Fixed Footer</title> 
+    <title>Navigation Bar 2</title> 
     <meta name="viewport" 
       content="width=device-width, initial-scale=1"> 
     <link rel="stylesheet" href=
@@ -15,37 +15,29 @@
 
 </head> 
 <body> 
-  <div data-role="page">
 
-    <div data-role="header">
-      <h1>First</h1>
-    </div>
-
-    <div data-role="content">  
-      <p>Go to the <a href="#second">second page</a></p>    
-    </div>
-
-    <div data-role="footer" data-id="myfooter" data-position="fixed">
-      <p>First page</p>
-    </div>
-     
-  </div>
-<div data-role="page" data-add-back-btn="true" id="second">
+<div data-role="page">
 
   <div data-role="header">
-    <h1>Second</h1>
+    <h1>Navigation Bar 2</h1>
+  </div>
+  <div data-role="content">  
+        <p>Make a choice from the following options</p>
+  </div>
+  <div data-role="navbar">
+    <ul>
+    <li><a href="#first" class="ui-btn-active">First</a></li>
+    <li><a href="#second">Second</a></li>
+    <li><a href="#third">Third</a></li>
+     <li><a href="#fourth">Fourth</a></li>
+      <li><a href="#fifth">Fifth</a></li>
+       <li><a href="#sixth">Sixth</a></li>
+    </ul>
   </div>
 
-  <div data-role="content">  
-      <p>Content</p>
-      <p>More text</p>
-       
-  </div>
-  <div data-role="footer" data-id="myfooter" data-position="fixed">
-      <p>Second page</p>
-  </div>
   
 </div>
+
 
 </body>
 </html>

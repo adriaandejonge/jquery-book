@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>The timeout property</title>
+</head>
+<body>
+
+<h2>See blue paragraphs below</h2>
+
+<p>This one is red</p>
+
+<span>This is green</span>
+
+<p>And this one it red again</p>
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<script>
+(function( $ ){
+
+  $.fn.makeIt = function(options) {
+    
+    var settings = $.extend(
+      { color: 'red' }, 
+      options
+    );
+  
+    this.css('background-color', settings.color);
+
+  };
+})( jQuery );
+
+
+// please externalize this code to an external .js file
+$(document).ready(function() {
+
+  $('p').makeIt(); // default is red
+  $('span').makeIt({ color: 'green' });
+
+});
+</script>
+</body>
+</html>
