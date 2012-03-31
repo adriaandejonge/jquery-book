@@ -1,0 +1,7 @@
+first example: document ready should be pageinit?
+add javascript to footer menu select element in first example
+radio and checkbox example, div field contain is not closed between the field sets
+
+just a question: are buttons explicitly discussed? or are these accidentally in ch8? Or do they actually belong there?
+
+

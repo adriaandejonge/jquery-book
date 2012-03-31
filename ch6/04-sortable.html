@@ -29,6 +29,8 @@
   <li>And more items containing subitems</li>
 </ul>
 
+<p>item</p>
+
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
 </script>
@@ -37,7 +39,15 @@
 // please externalize this code to an external .js file
 $(document).ready(function() {
 
-  $('ul').sortable();
+  $('ul').sortable({start: function() {
+    $('p').append('start<br>');
+  }, sort: function() {
+        $('p').append('sot<br>');
+  }, change: function() {
+        $('p').append('change<br>');
+  }, stop: function() {
+        $('p').append('stop<br>');
+  });
 
 });
 </script>

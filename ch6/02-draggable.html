@@ -6,6 +6,7 @@
   <style>
   .ui-draggable {
     border: 1px dashed black;
+    background-color: white;
   }
   .ui-draggable-dragging {
     border: 1px solid red;
@@ -15,13 +16,14 @@
 <body>
 
 <h2>Drag all elements around the screen</h2>
-<p>More text <b>with bold</b> followed by text</p>
+<p style="overflow: hidden;">More text <b>with bold</b> followed by text</p>
 <h2>Another header</h2>
 <ul>
   <li>And a list</li>
   <li>With items</li>
 </ul>
-
+<iframe id="my-iframe" src="http://www.google.com"></iframe>
+  
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.16/jquery-ui.min.js">
 </script>
@@ -30,8 +32,9 @@
 // please externalize this code to an external .js file
 $(document).ready(function() {
 
-  $('body *').draggable();
-
+  $('body *').draggable({ cursor: 'wait'
+   });
+ 
 });
 </script>
 </body>

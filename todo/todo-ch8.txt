@@ -1,0 +1,5 @@
+When are pages removed from the DOM tree?
+Events: page create pageinit instead of document ready
+Add attributes from JavaScript code instead of HTML
+Show resulting HTML
+Provide custom styling
